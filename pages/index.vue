@@ -4,11 +4,10 @@
       <nuxt-link
         v-for="(post, index) in posts"
         :key="index"
-        :to="'posts/' + post.fields.slug"
+        :to="`posts/'${post.fields.slug}`"
         class="post"
       >
         <div class="thumb">
-          // eslint-disable-next-line prettier/prettier
           <img
             :src="post.fields.image ? post.fields.image.fields.file.url : null"
           />
