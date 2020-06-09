@@ -9,10 +9,9 @@
       >
         <div class="thumb">
           <img
-            ·:src="post.fields.image·?·post.fields.image.fields.file.url·:·null"
+            :src="post.fields.image ? post.fields.image.fields.file.url : null"
           />
         </div>
-        `
         <div class="post-text">
           <p>{{ formatDate(post.sys.createdAt) }}</p>
           <h2>{{ post.fields.title }}</h2>
