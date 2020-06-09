@@ -8,6 +8,7 @@
         class="post"
       >
         <div class="thumb">
+          // eslint-disable-next-line prettier/prettier
           <img
             :src="post.fields.image ? post.fields.image.fields.file.url : null"
           />
@@ -54,10 +55,14 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  font-family: 'Chalkboard', sans-serif;
+  margin: 0;
+}
 section.latest-posts {
   padding: 10px;
   .posts {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 5px;
     display: flex;
@@ -65,9 +70,9 @@ section.latest-posts {
     flex-wrap: wrap;
     background: #ddd;
     a.post {
-      width: calc(100% / 2 - 20px);
+      width: calc(100% - 20px);
       @media (min-width: (768px)) {
-        width: calc(100% / 3 - 20px);
+        width: calc(100% / 4 - 20px);
       }
       margin: 10px;
       background: #fff;
@@ -89,7 +94,11 @@ section.latest-posts {
       }
       .post-text {
         padding: 5px 10px 10px;
+        p {
+          text-align: right;
+        }
         h2 {
+          text-align: left;
           width: fit-content;
           font-size: 20px;
         }
