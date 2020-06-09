@@ -25,6 +25,7 @@
 <script>
 import client from '~/plugins/contentful'
 export default {
+  // eslint-disable-next-line no-unused-vars
   asyncData({ params }) {
     return (
       client

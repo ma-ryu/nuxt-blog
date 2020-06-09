@@ -12,6 +12,7 @@
 import client from '~/plugins/contentful'
 
 export default {
+  // eslint-disable-next-line no-unused-vars
   asyncData({ params, error, payload }) {
     if (payload) return { post: payload }
     return client
