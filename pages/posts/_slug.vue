@@ -3,7 +3,7 @@
     <div class="single">
       <h1 class="post-title">{{ post.fields.title }}</h1>
       <p class="post-created-at">{{ formatDate(post.sys.createdAt) }}</p>
-      <div class="post-content" v-html="$md.render(post.fields.content)"></div>
+      <div class="post-content" v-html="$md.render(post.fields.body)"></div>
     </div>
   </article>
 </template>
@@ -53,8 +53,8 @@ article.article {
     margin: 0 auto;
     padding: 10px;
     color: #222;
-    border: 2px solid #444;
-    border-radius: 10px;
+    border: 1.5px solid rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
     h1,
     h2,
     h3 {

@@ -37,10 +37,15 @@ export default {
     font-size: 32px;
     margin-left: 8px;
     padding: 16px;
-
+    h1 {
+      font-weight: lighter;
+    }
     img {
       height: 95px;
       margin-right: 24px;
+    }
+    @media (max-width: (768px)) {
+      display: none;
     }
   }
 }

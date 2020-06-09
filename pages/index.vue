@@ -1,10 +1,14 @@
 <template>
   <section class="latest-posts">
+    <div class="headline">
+      <h2>最新情報</h2>
+      <p>NEW POST</p>
+    </div>
     <div class="posts">
       <nuxt-link
         v-for="(post, index) in posts"
         :key="index"
-        :to="`posts/'${post.fields.slug}`"
+        :to="`posts/${post.fields.slug}`"
         class="post"
       >
         <div class="thumb">
@@ -61,6 +65,15 @@ export default {
 }
 section.latest-posts {
   padding: 10px;
+  .headline {
+    h2 {
+      width: 200px;
+      margin: 0 auto;
+      border-bottom: 1px solid black;
+      border-width: 2px;
+      border-radius: 12px;
+    }
+  }
   .posts {
     max-width: 1200px;
     margin: 0 auto;
