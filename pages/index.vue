@@ -12,9 +12,7 @@
         class="post"
       >
         <div class="thumb">
-          <img
-            :src="post.fields.image ? post.fields.image.fields.file.url : null"
-          />
+          <img :src="post.fields.image ? post.fields.image.fields.file.url : null" />
         </div>
         <div class="post-text">
           <p>{{ formatDate(post.sys.createdAt) }}</p>
@@ -28,7 +26,6 @@
 <script>
 import client from '~/plugins/contentful'
 export default {
-  // eslint-disable-next-line no-unused-vars
   asyncData({ params }) {
     return (
       client
