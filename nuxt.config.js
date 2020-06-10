@@ -55,16 +55,21 @@ export default {
   },
   generate: {
     routes() {
-      return client.getEntries({
-        ontent_type: "post"
-      }).then((entries) => {
-        return [...entries.items.map(entry => `/posts/${entry.fields.slug}`)]
-      })
+      return client
+        .getEntries({ content_type: 'post' })
+        .then(entries => {
+          return entries.items.map(entry => {
+            return {
+              route: "/posts/"+entry.fields.slug,
+              payload: entry
+            }
+          })
+        })
     }
   },
   env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN
+    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
   },
   /*
    ** Build configuration
@@ -75,3 +80,4 @@ export default {
      */
     extend(config, ctx) {}
   }
+}
