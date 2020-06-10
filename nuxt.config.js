@@ -56,7 +56,7 @@ export default {
   generate: {
     routes() {
       return client.getEntries({
-        'content_type': "post"
+        content_type: "post"
       }).then((entries) => {
         return [...entries.items.map(entry => `posts/${entry.fields.slug}`)]
       })
