@@ -56,9 +56,9 @@ export default {
   generate: {
     routes() {
       return client.getEntries({
-        content_type: "post"
+        ontent_type: "post"
       }).then((entries) => {
-        return [...entries.items.map(entry => `posts/${entry.fields.slug}`)]
+        return [...entries.items.map(entry => `/posts/${entry.fields.slug}`)]
       })
     }
   },
@@ -75,4 +75,3 @@ export default {
      */
     extend(config, ctx) {}
   }
-}
