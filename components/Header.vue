@@ -39,13 +39,16 @@ export default {
     padding: 16px;
     h1 {
       font-weight: lighter;
+      @media (max-width: (768px)) {
+        font-size: 32px;
+      }
     }
     img {
       height: 95px;
       margin-right: 24px;
-    }
-    @media (max-width: (768px)) {
-      display: none;
+      @media (max-width: (768px)) {
+        display: none;
+      }
     }
   }
 }

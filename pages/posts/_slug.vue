@@ -49,7 +49,7 @@ export default {
 article.article {
   padding: 10px;
   .single {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
     color: #222;
@@ -62,27 +62,56 @@ article.article {
     }
     h1.post-title {
       font-size: 32px;
+      word-break: keep-all;
+      word-wrap: break-word;
       text-decoration: underline;
+      @media (max-width: (768px)) {
+        font-size: 24px;
+      }
+    }
+    p.post-created-at {
+      text-align: right;
     }
     .post-content {
       text-align: left;
+      padding: 8px;
       h1 {
         font-size: 32px;
+        padding: 4px;
+        @media (max-width: (768px)) {
+          font-size: 24px;
+        }
       }
       h2 {
         font-size: 24px;
+        padding: 4px;
         background: #ccc;
+        @media (max-width: (768px)) {
+          font-size: 16px;
+        }
       }
       p {
         margin: 16px 0;
         font-size: 16px;
+        @media (max-width: (768px)) {
+          font-size: 8px;
+        }
+      }
+      a {
+        word-break: break-all;
       }
       img {
         max-width: 100%;
         border: 1px solid #000;
       }
       ul {
-        list-style: none;
+        padding-left: 24px;
+        li {
+          font-size: 16px;
+          @media (max-width: (768px)) {
+            font-size: 8px;
+          }
+        }
       }
     }
   }

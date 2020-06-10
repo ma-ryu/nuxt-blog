@@ -9,13 +9,16 @@
       <nav class="nav" :class="{ 'is-show': show }" v-if="show">
         <ul class="nav-wrap">
           <li>
-            <nuxt-link to="/link01">BLOG</nuxt-link>
+            <nuxt-link to="/">HOME</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/link02">WORK</nuxt-link>
+            <nuxt-link to="/posts">BLOG</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/link03">CONTACT</nuxt-link>
+            <nuxt-link to="/">WORK</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/">CONTACT</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -23,13 +26,16 @@
     <nav class="nav">
       <ul class="nav-wrap">
         <li>
-          <nuxt-link to="/link01">BLOG</nuxt-link>
+          <nuxt-link to="/">HOME</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/link02">WORK</nuxt-link>
+          <nuxt-link to="/posts">BLOG</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/link03">CONTACT</nuxt-link>
+          <nuxt-link to="/">WORK</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/">CONTACT</nuxt-link>
         </li>
       </ul>
     </nav>
@@ -76,9 +82,12 @@ export default {
         }
         &:nth-child(2) {
           top: 14px;
+          width: 80%;
+          margin-left: 6px;
         }
         &:last-child {
           bottom: 0;
+          width: 80%;
         }
       }
       &.is-active {
@@ -94,6 +103,8 @@ export default {
           &:last-child {
             transform: rotate(-45deg);
             top: 50%;
+            width: 100%;
+            margin: 0;
           }
         }
       }
