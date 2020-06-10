@@ -65,6 +65,7 @@ article.article {
       text-decoration: underline;
     }
     .post-content {
+      text-align: left;
       h1 {
         font-size: 32px;
       }
@@ -79,6 +80,9 @@ article.article {
       img {
         max-width: 100%;
         border: 1px solid #000;
+      }
+      ul {
+        list-style: none;
       }
     }
   }

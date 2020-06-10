@@ -1,16 +1,12 @@
 <template>
   <div>
-    <div
-      class="header__menu-line"
-      @click="navOpen"
-      :class="{ 'is-active': active }"
-    >
+    <div class="header__menu-line" @click="navOpen" :class="{ 'is-active': active }">
       <span></span>
       <span></span>
       <span></span>
     </div>
     <transition name="nav">
-      <nav class="nav" :class="{ 'is-show': show }" v-if="show" key="huga">
+      <nav class="nav" :class="{ 'is-show': show }" v-if="show">
         <ul class="nav-wrap">
           <li>
             <nuxt-link to="/link01">BLOG</nuxt-link>
@@ -24,6 +20,19 @@
         </ul>
       </nav>
     </transition>
+    <nav class="nav">
+      <ul class="nav-wrap">
+        <li>
+          <nuxt-link to="/link01">BLOG</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/link02">WORK</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/link03">CONTACT</nuxt-link>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 <script>
@@ -91,6 +100,7 @@ export default {
     }
   }
   .nav {
+    display: block;
     @media (max-width: (768px)) {
       display: none;
       background-color: rgba(197, 197, 197, 0.671);
