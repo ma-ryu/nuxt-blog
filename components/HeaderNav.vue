@@ -8,16 +8,16 @@
     <transition name="nav">
       <nav class="nav" :class="{ 'is-show': show }" v-if="show">
         <ul class="nav-wrap">
-          <li>
+          <li @click="navOpen">
             <nuxt-link to="/">HOME</nuxt-link>
           </li>
-          <li>
+          <li @click="navOpen">
             <nuxt-link to="/posts">BLOG</nuxt-link>
           </li>
           <li>
             <nuxt-link to="/">WORK</nuxt-link>
           </li>
-          <li>
+          <li @click="navOpen">
             <nuxt-link to="/">CONTACT</nuxt-link>
           </li>
         </ul>
@@ -114,22 +114,20 @@ export default {
     display: block;
     @media (max-width: (768px)) {
       display: none;
-      background-color: rgba(197, 197, 197, 0.671);
+      background-color: rgba(238, 255, 250, 0.95);
       z-index: 30;
       padding: 2rem 1rem;
-      width: 20rem;
-      height: 80rem;
+      width: 100%;
+      height: 100%;
       top: 0;
       right: 0;
     }
     &-wrap {
       list-style-type: none;
-      padding: 16px;
       margin-right: 16px;
       display: flex;
       @media (max-width: (768px)) {
         flex-direction: column;
-        background-color: rgba(230, 230, 230, 0.3);
         overflow-y: scroll;
         z-index: -1;
       }

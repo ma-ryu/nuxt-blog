@@ -1,28 +1,33 @@
 <template>
-  <section class="latest-posts">
-    <div class="headline">
-      <h2>最新情報</h2>
-      <p>NEW POST</p>
-    </div>
-    <div class="posts">
-      <nuxt-link
-        v-for="(post, index) in posts"
-        :key="index"
-        :to="`posts/${post.fields.slug}`"
-        class="post"
-      >
-        <div class="thumb">
-          <img
-            :src="post.fields.image ? post.fields.image.fields.file.url : null"
-          />
-        </div>
-        <div class="post-text">
-          <p>{{ formatDate(post.sys.createdAt) }}</p>
-          <h2>{{ post.fields.title }}</h2>
-        </div>
-      </nuxt-link>
-    </div>
-  </section>
+  <div>
+    <section class="jumbtron">
+      <div class="bg-home">
+        <img src="../assets/img/bg-home.jpg" alt />
+      </div>
+    </section>
+    <section class="latest-posts">
+      <div class="headline">
+        <h2>最新情報</h2>
+        <p>NEW POST</p>
+      </div>
+      <div class="posts">
+        <nuxt-link
+          v-for="(post, index) in posts"
+          :key="index"
+          :to="`posts/${post.fields.slug}`"
+          class="post"
+        >
+          <div class="thumb">
+            <img :src="post.fields.image ? post.fields.image.fields.file.url : null" />
+          </div>
+          <div class="post-text">
+            <p>{{ formatDate(post.sys.createdAt) }}</p>
+            <h2>{{ post.fields.title }}</h2>
+          </div>
+        </nuxt-link>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -63,6 +68,27 @@ export default {
   font-family: 'Chalkboard', sans-serif;
   margin: 0;
 }
+.jumbtron {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: -8px;
+  .bg-home {
+    img {
+      max-width: 100vw;
+      width: 100vw;
+      height: 40vh;
+      object-fit: cover;
+      object-position: 0 100%;
+      @media (max-width: (768px)) {
+        height: 25vh;
+      }
+    }
+  }
+}
 section.latest-posts {
   padding: 10px;
   .headline {
@@ -70,8 +96,8 @@ section.latest-posts {
       width: 200px;
       margin: 0 auto;
       border-bottom: 1px solid black;
-      border-width: 2px;
-      border-radius: 12px;
+      border-width: 1.5px;
+      border-radius: 6px;
     }
   }
   .posts {
@@ -84,6 +110,7 @@ section.latest-posts {
     background: #ddd;
     a.post {
       width: calc(100% - 20px);
+      border-radius: 8px;
       @media (min-width: (768px)) {
         width: calc(100% / 4 - 20px);
       }
@@ -96,6 +123,8 @@ section.latest-posts {
         padding-bottom: 75%;
         position: relative;
         overflow: hidden;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
         img {
           position: absolute;
           top: 50%;

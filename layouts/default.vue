@@ -29,7 +29,7 @@ main {
   min-height: 600px;
   background-color: #ddd;
   text-align: center;
-  padding: 30px;
+  padding: 8px;
 }
 .page-enter-active,
 .page-leave-active {
