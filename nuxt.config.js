@@ -54,30 +54,41 @@ export default {
     typography: true
   },
   generate: {
-    routes() {
-      return client
-        .getEntries({ content_type: 'post' })
-        .then(entries => {
-          return entries.items.map(entry => {
-            return {
-              route: `posts/${entry.fields.slug}`,
-              payload: entry
-            }
-          })
+    routes () {
+      return Promise.all([
+        client.getEntries({
+          'content_type': 'post'
+        }),
+        client.getEntries({
+          'content_type': 'about'
+        }),
+        client.getEntries({
+          'content_type': 'category'
+        }),
+        client.getEntries({
+          'content_type': 'tag'
         })
+      ]).then(([posts,about, categories,tags]) => {
+        return [
+          ...posts.items.map(post => `posts/${post.fields.slug}`),
+          ...about.items.map(about => `abouts/${about.fields.slug}`),
+          ...categories.items.map(category => `posts/category/${category.fields.slug}`),
+          ...tags.items.map(tag => `posts/tag/${tag.fields.slug}`)
+        ]
+      })
     }
   },
-  env: {
-    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
-  },
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
-  }
-}
+        env: {
+          CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+          CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
+        },
+        /*
+         ** Build configuration
+         */
+        build: {
+          /*
+           ** You can extend webpack config here
+           */
+          extend(config, ctx) {}
+        }
+    }
