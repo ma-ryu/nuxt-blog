@@ -54,8 +54,8 @@ export default {
     typography: true
   },
   generate: {
-    routes () {
-      return Promise.all([
+    async routes () {
+      const [posts, about, categories, tags] = await Promise.all([
         client.getEntries({
           'content_type': 'post'
         }),
@@ -68,14 +68,13 @@ export default {
         client.getEntries({
           'content_type': 'tag'
         })
-      ]).then(([posts,about, categories,tags]) => {
-        return [
-          ...posts.items.map(post => `posts/${post.fields.slug}`),
-          ...about.items.map(about => `abouts/${about.fields.slug}`),
-          ...categories.items.map(category => `posts/category/${category.fields.slug}`),
-          ...tags.items.map(tag => `posts/tag/${tag.fields.slug}`)
-        ]
-      })
+      ])
+      return [
+        ...posts.items.map(post => `posts/${post.fields.slug}`),
+        ...about.items.map(about => `abouts/${about.fields.slug}`),
+        ...categories.items.map(category => `posts/category/${category.fields.slug}`),
+        ...tags.items.map(tag => `posts/tag/${tag.fields.slug}`)
+      ]
     }
   },
         env: {
