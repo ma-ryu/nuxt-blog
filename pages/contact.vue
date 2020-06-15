@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 .headline {
+  margin-top: 70px;
   h2 {
     width: 200px;
     margin: 0 auto;

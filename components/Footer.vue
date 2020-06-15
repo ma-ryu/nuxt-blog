@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       // eslint-disable-next-line no-undef
-      copyright: `Copyright ©️ ${new Date().getFullYear()} Ma-ryu All rights reserved.`
+      copyright: `©️ ${new Date().getFullYear()} Ma-ryu All rights reserved.`
     }
   }
 }
@@ -23,7 +23,7 @@ export default {
   font-size: 16px;
   justify-content: center;
   align-content: center;
-  height: 100px;
+  height: 80px;
   p {
     display: inline-flex;
     align-items: center;
