@@ -11,7 +11,7 @@
         :to="`about/${about.fields.slug}`"
         class="post"
       >
-        <div class="thumb">
+        <div class="thumb" v-if="about.fields.image">
           <img :src="about.fields.image ? about.fields.image.fields.file.url : null" />
         </div>
         <div class="post-text">
