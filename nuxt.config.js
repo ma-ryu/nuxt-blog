@@ -114,7 +114,8 @@ export default {
   },
   env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN
+    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
+    GA_ID: process.env.GA_ID
   },
   /*
    ** Build configuration
