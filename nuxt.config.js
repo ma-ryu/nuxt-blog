@@ -45,7 +45,7 @@ export default {
     '@nuxtjs/eslint-module'
   ],
   plugins: ['~/plugins/contentful'],
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit'],
+  modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit', 'nuxt-fontawesome'],
   markdownit: {
     injected: true,
     html: true,
@@ -53,8 +53,14 @@ export default {
     linkify: true,
     typography: true
   },
+  fontawesome: {
+    imports: [{
+      set: '@fortawesome/free-solid-svg-icons',
+      icons: ['fas']
+    }]
+  },
   generate: {
-    routes () {
+    routes() {
       return Promise.all([
         client.getEntries({
           'content_type': 'post'
@@ -62,7 +68,7 @@ export default {
         client.getEntries({
           'content_type': 'about'
         }),
-      ]).then(([posts,about]) => {
+      ]).then(([posts, about]) => {
         return [
           ...posts.items.map(post => `posts/${post.fields.slug}`),
           ...about.items.map(about => `abouts/${about.fields.slug}`),
@@ -70,17 +76,17 @@ export default {
       })
     }
   },
-        env: {
-          CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-          CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
-        },
-        /*
-         ** Build configuration
-         */
-        build: {
-          /*
-           ** You can extend webpack config here
-           */
-          extend(config, ctx) {}
-        }
-    }
+  env: {
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
+  },
+  /*
+   ** Build configuration
+   */
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {}
+  }
+}

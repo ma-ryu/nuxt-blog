@@ -1,33 +1,26 @@
 <template>
-  <div>
-    <section class="jumbtron">
-      <div class="bg-home">
-        <img src="../assets/img/bg-home.jpg" alt />
-      </div>
-    </section>
-    <section class="latest-posts">
-      <div class="headline">
-        <h2>最新情報</h2>
-        <p>NEW POST</p>
-      </div>
-      <div class="posts">
-        <nuxt-link
-          v-for="(post, index) in posts"
-          :key="index"
-          :to="`posts/${post.fields.slug}`"
-          class="post"
-        >
-          <div class="thumb">
-            <img :src="post.fields.image ? post.fields.image.fields.file.url : null" />
-          </div>
-          <div class="post-text">
-            <p>{{ formatDate(post.sys.createdAt) }}</p>
-            <h2>{{ post.fields.title }}</h2>
-          </div>
-        </nuxt-link>
-      </div>
-    </section>
-  </div>
+  <section class="latest-posts">
+    <div class="headline">
+      <h2>最新情報</h2>
+      <p>NEW POST</p>
+    </div>
+    <div class="posts">
+      <nuxt-link
+        v-for="(post, index) in posts"
+        :key="index"
+        :to="`posts/${post.fields.slug}`"
+        class="post"
+      >
+        <div class="thumb">
+          <img :src="post.fields.image ? post.fields.image.fields.file.url : null" />
+        </div>
+        <div class="post-text">
+          <p>{{ formatDate(post.sys.createdAt) }}</p>
+          <h2>{{ post.fields.title }}</h2>
+        </div>
+      </nuxt-link>
+    </div>
+  </section>
 </template>
 
 <script>

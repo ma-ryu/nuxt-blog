@@ -18,7 +18,7 @@
             <nuxt-link to="/about">WORK</nuxt-link>
           </li>
           <li @click="navOpen">
-            <nuxt-link to="/">CONTACT</nuxt-link>
+            <nuxt-link to="/contact">CONTACT</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -35,7 +35,7 @@
           <nuxt-link to="/about">WORK</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/">CONTACT</nuxt-link>
+          <nuxt-link to="/contact">CONTACT</nuxt-link>
         </li>
       </ul>
     </nav>
