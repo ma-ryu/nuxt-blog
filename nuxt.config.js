@@ -7,7 +7,8 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: "Ma-ryu" || '',
+    titleTemplate: '%s - Ma-ryu',
     meta: [{
         charset: 'utf-8'
       },
@@ -18,7 +19,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'ma-ryuの趣味とプログラミングの学習過程を記録するブログです。' || ''
       }
     ],
     link: [{
@@ -45,7 +46,7 @@ export default {
     '@nuxtjs/eslint-module'
   ],
   plugins: ['~/plugins/contentful'],
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit', 'nuxt-fontawesome'],
+  modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit', 'nuxt-fontawesome', '@nuxtjs/sitemap'],
   markdownit: {
     injected: true,
     html: true,
@@ -63,6 +64,24 @@ export default {
         icons: ['fab']
       }
     ]
+  },
+  sitemap: {
+    hostname: 'https://ma-ryu-portfolio.netlify.app',
+    routes() {
+      return Promise.all([
+        client.getEntries({
+          'content_type': 'post'
+        }),
+        client.getEntries({
+          'content_type': 'about'
+        }),
+      ]).then(([posts, about]) => {
+        return [
+          ...posts.items.map(post => `posts/${post.fields.slug}`),
+          ...about.items.map(about => `abouts/${about.fields.slug}`),
+        ]
+      })
+    }
   },
   generate: {
     routes() {

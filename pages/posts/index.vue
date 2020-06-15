@@ -51,7 +51,14 @@ export default {
     }
   },
   head: {
-    title: '記事一覧'
+    title: '記事一覧',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'blogの記事一覧ページです。'
+      }
+    ]
   }
 }
 </script>

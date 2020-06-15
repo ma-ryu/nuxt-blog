@@ -51,7 +51,10 @@ export default {
     }
   },
   head: {
-    title: '紹介ページ'
+    title: '紹介ページ',
+    meta: [
+      {hid: 'description', name: 'description', content: "制作実績やMa-ryuに関する記事の紹介ページです。"}
+    ]
   }
 }
 </script>

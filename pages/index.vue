@@ -122,7 +122,7 @@ export default {
     }
   },
   head: {
-    title: '記事一覧'
+    title: 'ma-ryu tech-blog',
   }
 }
 </script>
@@ -161,7 +161,7 @@ export default {
   position: relative;
   top: 0;
   bottom: 0;
-  margin: 0 auto;
+  margin: 24px auto;
   .about-headline {
     text-align: left;
     display: flex;
