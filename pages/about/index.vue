@@ -8,7 +8,7 @@
       <nuxt-link
         v-for="(about, index) in about"
         :key="index"
-        :to="`about/${about.fields.slug}`"
+        :to="`${about.fields.slug}`"
         class="post"
       >
         <div class="thumb">
