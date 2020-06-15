@@ -2,6 +2,7 @@
 <template>
   <div class="input-area">
     <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
       <label for="name">
         <font-awesome-icon icon="user" />
         <input name="name" type="text" required />
