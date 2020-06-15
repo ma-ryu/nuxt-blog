@@ -1,4 +1,5 @@
 require('dotenv').config()
+console.info('nuxt.config.js MESSAGE:', process.env.GA_ID)
 const client = require('./plugins/contentful')
 
 export default {
@@ -6,6 +7,11 @@ export default {
   /*
    ** Headers of the page
    */
+  env: {
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
+    GA_ID: process.env.GA_ID
+  },
   head: {
     title: 'Ma-ryu' || '',
     titleTemplate: '%s - Ma-ryu',
@@ -55,9 +61,11 @@ export default {
     '@nuxtjs/markdownit',
     'nuxt-fontawesome',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-analytics',
-    { id: process.env.GA_ID }
+    '@nuxtjs/google-analytics'
   ],
+  googleAnalytics: {
+    id: process.env.GA_ID
+  },
   markdownit: {
     injected: true,
     html: true,
@@ -112,11 +120,7 @@ export default {
       })
     }
   },
-  env: {
-    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
-    GA_ID: process.env.GA_ID
-  },
+  
   /*
    ** Build configuration
    */
