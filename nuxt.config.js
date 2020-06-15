@@ -46,7 +46,13 @@ export default {
     '@nuxtjs/eslint-module'
   ],
   plugins: ['~/plugins/contentful'],
-  modules: ['@nuxtjs/dotenv', '@nuxtjs/markdownit', 'nuxt-fontawesome', '@nuxtjs/sitemap'],
+  modules: [
+    '@nuxtjs/dotenv',
+    '@nuxtjs/markdownit',
+    'nuxt-fontawesome',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/google-analytics', {id: process.env.GA_ID}
+  ],
   markdownit: {
     injected: true,
     html: true,
