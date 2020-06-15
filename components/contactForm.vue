@@ -1,23 +1,22 @@
-
 <template>
   <div class="input-area">
     <form name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
       <label for="name">
-        <font-awesome-icon icon="user" />
+        <font-awesome-icon :icon="['fas', 'user']" />
         <input name="name" type="text" required />
       </label>
       <label for="email">
-        <font-awesome-icon icon="envelope" />
+        <font-awesome-icon :icon="['fas', 'envelope']" />
         <input name="email" type="text" required />
       </label>
       <label for="textarea">
-        <font-awesome-icon icon="comment" />
+        <font-awesome-icon :icon="['fas', 'comment']" />
         <textarea name="textarea" cols="30" rows="10"></textarea>
       </label>
       <button value="Send" type="submit">
         Send
-        <font-awesome-icon icon="paper-plane" />
+        <font-awesome-icon :icon="['fas', 'paper-plane']" />
       </button>
     </form>
   </div>
@@ -41,7 +40,6 @@ export default {}
       border: 1.2px solid gray;
       border-radius: 4px;
       input {
-        font-size: 18px;
         width: 500px;
         height: 32px;
         border: none;
@@ -70,7 +68,8 @@ export default {}
         }
       }
       svg {
-        padding: 8px;
+        font-size: 16px;
+        margin: 8px;
       }
     }
     button {

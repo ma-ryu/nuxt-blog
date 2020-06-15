@@ -1,5 +1,4 @@
 require('dotenv').config()
-console.info('nuxt.config.js MESSAGE:', process.env.GA_ID)
 const client = require('./plugins/contentful')
 
 export default {
@@ -15,8 +14,7 @@ export default {
   head: {
     title: 'Ma-ryu' || '',
     titleTemplate: '%s - Ma-ryu',
-    meta: [
-      {
+    meta: [{
         charset: 'utf-8'
       },
       {
@@ -26,17 +24,14 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content:
-          'ma-ryuの趣味とプログラミングの学習過程を記録するブログです。' || ''
+        content: 'ma-ryuの趣味とプログラミングの学習過程を記録するブログです。' || ''
       }
     ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
-      }
-    ]
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }]
   },
   /*
    ** Customize the progress-bar color
@@ -55,14 +50,19 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
   ],
-  plugins: ['~/plugins/contentful'],
   modules: [
     '@nuxtjs/dotenv',
     '@nuxtjs/markdownit',
     'nuxt-fontawesome',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/vuetify'
   ],
+  vuetify: {
+    theme: {
+      dark: false
+    }
+  },
   googleAnalytics: {
     id: process.env.GA_ID
   },
@@ -74,8 +74,7 @@ export default {
     typography: true
   },
   fontawesome: {
-    imports: [
-      {
+    imports: [{
         set: '@fortawesome/free-solid-svg-icons',
         icons: ['fas']
       },
@@ -103,6 +102,7 @@ export default {
       })
     }
   },
+  plugins: ['~/plugins/contentful', '~/plugins/vuetify'],
   generate: {
     routes() {
       return Promise.all([
@@ -120,7 +120,7 @@ export default {
       })
     }
   },
-  
+
   /*
    ** Build configuration
    */

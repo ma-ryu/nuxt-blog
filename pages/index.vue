@@ -64,10 +64,24 @@
           class="post"
         >
           <div class="thumb">
-            <img :src="post.fields.image ? post.fields.image.fields.file.url : null" />
+            <img
+              :src="
+                post.fields.image ? post.fields.image.fields.file.url : null
+              "
+            />
           </div>
           <div class="post-text">
             <p>{{ formatDate(post.sys.createdAt) }}</p>
+            <div class="d-flex justify-start mb-3">
+              <v-chip
+                class="ma-1"
+                label
+                v-for="tag in post.fields.tag"
+                :key="tag.sys.id"
+              >
+                {{ tag.fields.name }}
+              </v-chip>
+            </div>
             <h2>{{ post.fields.title }}</h2>
           </div>
         </nuxt-link>
@@ -78,6 +92,7 @@
 
 <script>
 import client from '~/plugins/contentful'
+
 export default {
   data() {
     return {
@@ -122,7 +137,7 @@ export default {
     }
   },
   head: {
-    title: 'ma-ryu tech-blog',
+    title: 'ma-ryu tech-blog'
   }
 }
 </script>
@@ -220,6 +235,7 @@ section.latest-posts {
       border-bottom: 1px solid black;
       border-width: 1.5px;
       border-radius: 6px;
+      padding-bottom: 8px;
     }
   }
   .posts {

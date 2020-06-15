@@ -21,11 +21,13 @@ export default {
 .headline {
   margin-top: 70px;
   h2 {
-    width: 200px;
+    font-size: 32px;
+    width: 250px;
     margin: 0 auto;
     border-bottom: 1px solid black;
     border-width: 1.5px;
     border-radius: 6px;
+    padding-bottom: 8px;
   }
 }
 </style>

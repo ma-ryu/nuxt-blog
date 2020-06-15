@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <v-app>
     <Header />
     <main>
       <nuxt class="main" />
     </main>
     <Footer />
-  </div>
+  </v-app>
 </template>
 <script>
 import Header from '~/components/Header.vue'
