@@ -48,6 +48,9 @@ export default {}
         &:focus {
           outline: none;
         }
+        &:valid {
+          background-color: #ddd;
+        }
         @media (max-width: (768px)) {
           width: 300px;
         }
