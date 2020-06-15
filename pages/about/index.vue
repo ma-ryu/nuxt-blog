@@ -8,7 +8,7 @@
       <nuxt-link
         v-for="(about, index) in about"
         :key="index"
-        :to="`${about.fields.slug}`"
+        :to="`about/${about.fields.slug}`"
         class="post"
       >
         <div class="thumb">
@@ -58,7 +58,7 @@ export default {
 
 <style lang="scss">
 * {
-  font-family: 'Chalkboard', sans-serif;
+  font-family: sans-serif;
   margin: 0;
 }
 .jumbtron {
@@ -123,7 +123,6 @@ section.latest-posts {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          max-width: 100%;
           height: 100%;
         }
       }

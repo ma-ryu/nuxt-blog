@@ -3,7 +3,6 @@
     <div class="header-inner">
       <nuxt-link to="/">
         <div class="header-title">
-          <img src="~/assets/img/ma-ryu.png" />
           <h1>Ma-ryu</h1>
         </div>
       </nuxt-link>
@@ -28,6 +27,13 @@ export default {
   height: 100px;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: (768px)) {
+    height: 65px;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+  }
   a {
     text-decoration: none;
     color: black;

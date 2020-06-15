@@ -2,7 +2,7 @@
   <div>
     <Header />
     <main>
-      <nuxt />
+      <nuxt class="main" />
     </main>
     <Footer />
   </div>
@@ -19,8 +19,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
 }
 body {
   margin: 0;
@@ -30,6 +30,11 @@ main {
   background-color: #ddd;
   text-align: center;
   padding: 8px;
+}
+.main {
+  @media (max-width: (768px)) {
+    margin-top: 65px;
+  }
 }
 .page-enter-active,
 .page-leave-active {

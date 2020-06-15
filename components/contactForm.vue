@@ -41,6 +41,7 @@ export default {}
       border: 1.2px solid gray;
       border-radius: 4px;
       input {
+        font-size: 18px;
         width: 500px;
         height: 32px;
         border: none;
@@ -59,6 +60,8 @@ export default {}
         width: 500px;
         border: none;
         background: #ddd;
+        padding-top: 6px;
+        font-size: 18px;
         &:focus {
           outline: none;
         }

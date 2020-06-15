@@ -5,6 +5,52 @@
         <img src="../assets/img/bg-home.jpg" alt />
       </div>
     </section>
+    <section class="about">
+      <div class="about-headline">
+        <h2>Ma-ryu</h2>
+        <ul>
+          <li>
+            <a :href="sns.github.url" target="_blank">
+              <font-awesome-icon :icon="sns.github.icon" />
+            </a>
+          </li>
+          <li>
+            <a :href="sns.twitter.url" target="_blank">
+              <font-awesome-icon :icon="sns.twitter.icon" />
+            </a>
+          </li>
+          <li>
+            <a :href="sns.instagram.url" target="_blank">
+              <font-awesome-icon :icon="sns.instagram.icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="about-me">
+        <div class="headline">
+          <font-awesome-icon icon="user" />
+          <h4>About Me</h4>
+        </div>
+        <div class="content">
+          <p>
+            ご覧いただき、ありがとうございます。Ma-ryuと申します。
+            新潟県在住でWEB開発と趣味で写真の撮影を行なっています。
+            WordPressなどを使ったブログ・企業ホームページの作成を行なっています。
+            レスポンシブ対応・Googleアナリティクスの導入なども可能です。
+          </p>
+          <p>
+            ユーザーが使いやすいコンテンツ作成を目標に制作しています。
+            最近は、表示速度の高速化を目指しユーザーがストレスなく閲覧できるように、Vue.jsを使用した
+            WEB作成を学習中です。
+            このWEBサイトもNuxt.jsを利用して制作しています。
+          </p>
+        </div>
+
+        <nuxt-link class="contact-link" to="/contact">
+          <p>CONTACT</p>
+        </nuxt-link>
+      </div>
+    </section>
     <section class="latest-posts">
       <div class="headline">
         <h2>最新情報</h2>
@@ -33,6 +79,24 @@
 <script>
 import client from '~/plugins/contentful'
 export default {
+  data() {
+    return {
+      sns: {
+        github: {
+          url: 'https://github.com/ma-ryu',
+          icon: ['fab', 'github']
+        },
+        twitter: {
+          url: 'https://twitter.com/chalulog',
+          icon: ['fab', 'twitter']
+        },
+        instagram: {
+          url: 'https://www.instagram.com/ryu.ku.u/?hl=ja',
+          icon: ['fab', 'instagram']
+        }
+      }
+    }
+  },
   // eslint-disable-next-line no-unused-vars
   asyncData({ params }) {
     return (
@@ -65,7 +129,7 @@ export default {
 
 <style lang="scss">
 * {
-  font-family: 'Chalkboard', sans-serif;
+  font-family: sans-serif;
   margin: 0;
 }
 .jumbtron {
@@ -76,6 +140,9 @@ export default {
   margin-left: -50vw;
   margin-right: -50vw;
   margin-top: -8px;
+  @media (max-width: (768px)) {
+    margin-top: 55px;
+  }
   .bg-home {
     img {
       max-width: 100vw;
@@ -89,8 +156,63 @@ export default {
     }
   }
 }
+.about {
+  width: 80%;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  .about-headline {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      li {
+        padding-right: 8px;
+        a {
+          text-decoration: none;
+          svg {
+            color: black;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+  .about-me {
+    .headline {
+      margin-top: 16px;
+      margin-bottom: 8px;
+      display: flex;
+      svg {
+        margin-right: 16px;
+        margin-top: 4px;
+      }
+    }
+    .content {
+      padding: 8px;
+      p {
+        text-align: left;
+        line-height: 2;
+        margin-bottom: 8px;
+        font-size: 12px;
+      }
+    }
+  }
+  .contact-link {
+    text-decoration: none;
+    color: black;
+    p {
+      border: 1px solid black;
+    }
+  }
+}
 section.latest-posts {
   padding: 10px;
+  
   .headline {
     h2 {
       width: 200px;
@@ -130,7 +252,6 @@ section.latest-posts {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          max-width: 100%;
           height: 100%;
         }
       }

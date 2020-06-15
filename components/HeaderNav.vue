@@ -14,7 +14,7 @@
           <li @click="navOpen">
             <nuxt-link to="/posts">BLOG</nuxt-link>
           </li>
-          <li>
+          <li @click="navOpen">
             <nuxt-link to="/about">WORK</nuxt-link>
           </li>
           <li @click="navOpen">
@@ -114,11 +114,11 @@ export default {
     display: block;
     @media (max-width: (768px)) {
       display: none;
-      background-color: rgba(238, 255, 250, 0.95);
+      background-color: rgba(238, 238, 238, 0.95);
       z-index: 30;
       padding: 2rem 1rem;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       top: 0;
       right: 0;
     }
