@@ -7,9 +7,10 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: "Ma-ryu" || '',
+    title: 'Ma-ryu' || '',
     titleTemplate: '%s - Ma-ryu',
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8'
       },
       {
@@ -19,14 +20,17 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'ma-ryuの趣味とプログラミングの学習過程を記録するブログです。' || ''
+        content:
+          'ma-ryuの趣味とプログラミングの学習過程を記録するブログです。' || ''
       }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -51,7 +55,8 @@ export default {
     '@nuxtjs/markdownit',
     'nuxt-fontawesome',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-analytics', {id: process.env.GA_ID}
+    '@nuxtjs/google-analytics',
+    { id: process.env.GA_ID }
   ],
   markdownit: {
     injected: true,
@@ -61,7 +66,8 @@ export default {
     typography: true
   },
   fontawesome: {
-    imports: [{
+    imports: [
+      {
         set: '@fortawesome/free-solid-svg-icons',
         icons: ['fas']
       },
@@ -76,15 +82,15 @@ export default {
     routes() {
       return Promise.all([
         client.getEntries({
-          'content_type': 'post'
+          content_type: 'post'
         }),
         client.getEntries({
-          'content_type': 'about'
-        }),
+          content_type: 'about'
+        })
       ]).then(([posts, about]) => {
         return [
-          ...posts.items.map(post => `posts/${post.fields.slug}`),
-          ...about.items.map(about => `abouts/${about.fields.slug}`),
+          ...posts.items.map((post) => `posts/${post.fields.slug}`),
+          ...about.items.map((about) => `abouts/${about.fields.slug}`)
         ]
       })
     }
@@ -93,22 +99,22 @@ export default {
     routes() {
       return Promise.all([
         client.getEntries({
-          'content_type': 'post'
+          content_type: 'post'
         }),
         client.getEntries({
-          'content_type': 'about'
-        }),
+          content_type: 'about'
+        })
       ]).then(([posts, about]) => {
         return [
-          ...posts.items.map(post => `posts/${post.fields.slug}`),
-          ...about.items.map(about => `abouts/${about.fields.slug}`),
+          ...posts.items.map((post) => `posts/${post.fields.slug}`),
+          ...about.items.map((about) => `abouts/${about.fields.slug}`)
         ]
       })
     }
   },
   env: {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
+    CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN
   },
   /*
    ** Build configuration
