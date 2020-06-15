@@ -151,7 +151,7 @@ export default {
       object-fit: cover;
       object-position: 0 100%;
       @media (max-width: (768px)) {
-        height: 25vh;
+        height: 30vh;
       }
     }
   }
@@ -212,7 +212,7 @@ export default {
 }
 section.latest-posts {
   padding: 10px;
-  
+
   .headline {
     h2 {
       width: 200px;

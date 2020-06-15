@@ -33,7 +33,7 @@ main {
 }
 .main {
   @media (max-width: (768px)) {
-    margin-top: 65px;
+    margin-top: 55px;
   }
 }
 .page-enter-active,
