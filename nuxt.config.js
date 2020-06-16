@@ -102,7 +102,11 @@ export default {
       })
     }
   },
-  plugins: ['~/plugins/contentful', '~/plugins/vuetify'],
+  plugins: [
+    '~/plugins/contentful',
+    '~/plugins/vuetify',
+    '~/plugins/prism'
+  ],
   generate: {
     routes() {
       return Promise.all([
