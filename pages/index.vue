@@ -74,7 +74,7 @@
             <p>{{ formatDate(post.sys.createdAt) }}</p>
             <div class="d-flex justify-start mb-3">
               <v-chip
-                class="ma-1"
+                class="ma-1 secondary"
                 label
                 v-for="tag in post.fields.tag"
                 :key="tag.sys.id"

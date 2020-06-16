@@ -58,11 +58,6 @@ export default {
     '@nuxtjs/google-analytics',
     '@nuxtjs/vuetify'
   ],
-  vuetify: {
-    theme: {
-      dark: false
-    }
-  },
   googleAnalytics: {
     id: process.env.GA_ID
   },
@@ -104,7 +99,6 @@ export default {
   },
   plugins: [
     '~/plugins/contentful',
-    '~/plugins/vuetify',
     '~/plugins/prism'
   ],
   generate: {
