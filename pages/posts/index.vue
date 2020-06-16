@@ -5,29 +5,19 @@
       <p>NEW POST</p>
     </div>
     <div class="posts">
-      <nuxt-link
-        v-for="(post, index) in posts"
-        :key="index"
-        :to="`posts/${post.fields.slug}`"
-        class="post"
-      >
-        <div class="thumb">
-          <img
-            :src="post.fields.image ? post.fields.image.fields.file.url : null"
-          />
-        </div>
-        <div class="post-text">
-          <p>{{ formatDate(post.sys.createdAt) }}</p>
-          <h2>{{ post.fields.title }}</h2>
-        </div>
-      </nuxt-link>
+      <post v-for="(post, index) in posts" :key="index" :post="post" />
     </div>
   </section>
 </template>
 
 <script>
 import client from '~/plugins/contentful'
+import Post from '~/components/post.vue'
+
 export default {
+  components: {
+    Post
+  },
   // eslint-disable-next-line no-unused-vars
   asyncData({ params }) {
     return (
@@ -42,15 +32,6 @@ export default {
         // eslint-disable-next-line no-console
         .catch((e) => console.log(e))
     )
-  },
-  methods: {
-    formatDate(iso) {
-      const date = new Date(iso)
-      const yyyy = String(date.getFullYear())
-      const mm = String(date.getMonth() + 1).padStart(2, '0')
-      const dd = String(date.getDate()).padStart(2, '0')
-      return `${yyyy}.${mm}.${dd}`
-    }
   },
   head: {
     title: '記事一覧',
