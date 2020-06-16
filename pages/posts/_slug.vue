@@ -3,7 +3,10 @@
     <div class="single">
       <h1 class="post-title">{{ post.fields.title }}</h1>
       <p class="post-created-at">{{ formatDate(post.sys.createdAt) }}</p>
-      <div class="post-content line-numbers" v-html="$md.render(post.fields.body)"></div>
+      <div
+        class="post-content line-numbers"
+        v-html="$md.render(post.fields.body)"
+      ></div>
     </div>
   </article>
 </template>
@@ -43,15 +46,39 @@ export default {
     return {
       title: this.post.fields.title,
       meta: [
-        { hid: 'description', name: 'description', content: this.post.fields.description },
-        { hid: 'og:site_name', property: 'og:site_name', content: this.post.fields.title + ' - Ma-ryu' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.post.fields.description
+        },
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: this.post.fields.title + ' - Ma-ryu'
+        },
         { hid: 'og:type', property: 'og:type', content: 'website' },
-        { hid: 'og:url', property: 'og:url', content: `https://ma-ryu-portfolio.netlify.app/posts/${this.post.fields.slug}` },
-        { hid: 'og:title', property: 'og:title', content: this.post.fields.title },
-        { hid: 'og:description', property: 'og:description', content: this.post.fields.description },
-        { hid: 'og:image', property: 'og:image', content: "https:"+this.post.fields.image.fields.file.url },
-        { hid: 'twitter:card', name: 'twitter:card', content: "summary" },
-        { hid: 'twitter:site', name: 'twitter:site', content: "@chalu-log"}
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://ma-ryu-portfolio.netlify.app/posts/${this.post.fields.slug}`
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.post.fields.title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.post.fields.description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https:' + this.post.fields.image.fields.file.url
+        },
+        { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+        { hid: 'twitter:site', name: 'twitter:site', content: '@chalu-log' }
       ]
     }
   }
@@ -120,6 +147,14 @@ article.article {
       ul {
         padding-left: 24px;
         li {
+          font-size: 16px;
+          @media (max-width: (768px)) {
+            font-size: 8px;
+          }
+        }
+      }
+      pre {
+        code {
           font-size: 16px;
           @media (max-width: (768px)) {
             font-size: 8px;
