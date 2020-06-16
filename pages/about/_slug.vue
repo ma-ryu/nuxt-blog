@@ -86,9 +86,6 @@ export default {
 </script>
 
 <style lang="scss">
-pre {
-  font-size: 0.85rem;
-}
 article.article {
   padding: 10px;
   .single {
@@ -155,6 +152,9 @@ article.article {
             font-size: 8px;
           }
         }
+      }
+      pre {
+        font-size: 14px;
       }
     }
   }

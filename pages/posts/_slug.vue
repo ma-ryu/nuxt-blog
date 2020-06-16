@@ -134,7 +134,7 @@ article.article {
         margin: 16px 0;
         font-size: 16px;
         @media (max-width: (768px)) {
-          font-size: 8px;
+          font-size: 12px;
         }
       }
       a {
@@ -154,12 +154,7 @@ article.article {
         }
       }
       pre {
-        code {
-          font-size: 16px;
-          @media (max-width: (768px)) {
-            font-size: 8px;
-          }
-        }
+        font-size: 14px;
       }
     }
   }
