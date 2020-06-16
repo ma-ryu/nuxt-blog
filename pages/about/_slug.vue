@@ -27,6 +27,8 @@ export default {
   },
   mounted() {
     console.log(this.about)
+    // eslint-disable-next-line no-undef
+    Prism.highlightAll()
   },
   methods: {
     formatDate(iso) {
