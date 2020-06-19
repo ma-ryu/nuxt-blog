@@ -17,7 +17,7 @@
     </div>
     <div class="post-text">
       <p class="ma-1">{{ formatDate(post.sys.createdAt) }}</p>
-      <div class="d-flex justify-start mb-3">
+      <div class="d-flex flex-wrap justify-start mb-3">
         <v-chip
           class="ma-1 secondary"
           label
