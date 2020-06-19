@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 import Post from '~/components/post.vue'
 import Headline from '~/components/headline.vue'
 
@@ -27,8 +27,7 @@ export default {
   },
   // eslint-disable-next-line no-unused-vars
   computed: {
-    ...mapState(['posts']), // 追記
-    ...mapGetters(['linkTo']) // 追記
+    ...mapState(['posts']),
   },
   head: {
     title: '記事一覧',

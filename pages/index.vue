@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 import Post from '~/components/post.vue'
 import Profile from '~/components/profile.vue'
 import BackTop from '~/components/backTop.vue'
@@ -32,8 +32,7 @@ export default {
     BackTop
   },
   computed: {
-    ...mapState(['posts']), // 追記
-    ...mapGetters(['linkTo']) // 追記
+    ...mapState(['posts'])
   },
   // eslint-disable-next-line no-unused-vars
 

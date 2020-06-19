@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="post" :to="`posts/${post.fields.slug}`">
+  <nuxt-link class="post" :to="linkTo('posts', post)">
     <div class="thumb">
       <v-img
         height="200px"
@@ -33,7 +33,11 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+    computed: {
+    ...mapGetters(['linkTo']) 
+  },
   props: ['post'],
   methods: {
     formatDate(iso) {

@@ -5,7 +5,7 @@
       <nuxt-link
         v-for="(about, index) in about"
         :key="index"
-        :to="`about/${about.fields.slug}`"
+        :to="linkTo('about', about)"
         class="post"
       >
         <div class="thumb" v-if="about.fields.image">
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import client from '~/plugins/contentful'
+import { mapState, mapGetters } from 'vuex'
 import Headline from '~/components/headline.vue'
 
 export default {
@@ -40,21 +40,11 @@ export default {
       }
     }
   },
-  // eslint-disable-next-line no-unused-vars
-  asyncData({ params }) {
-    return (
-      client
-        .getEntries({
-          content_type: 'about',
-          order: '-sys.createdAt'
-        })
-        .then((entries) => {
-          return { about: entries.items }
-        })
-        // eslint-disable-next-line no-console
-        .catch((e) => console.log(e))
-    )
+  computed: {
+    ...mapState(['about']),
+    ...mapGetters(['linkTo'])
   },
+  // eslint-disable-next-line no-unused-vars
   methods: {
     formatDate(iso) {
       const date = new Date(iso)

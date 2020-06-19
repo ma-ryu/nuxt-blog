@@ -1,7 +1,8 @@
 import client from '~/plugins/contentful'
 
 export const state = () => ({
-  posts: []
+  posts: [],
+  about: []
 })
 
 export const getters = {
@@ -18,7 +19,10 @@ export const getters = {
 export const mutations = {
   setPosts(state, payload) {
     state.posts = payload
-  }
+  },
+  setAbout(state, payload) {
+    state.about = payload
+  },
 
 }
 
@@ -31,6 +35,16 @@ export const actions = {
       order: '-sys.createdAt'
     }).then(res =>
       commit('setPosts', res.items)
+    ).catch(console.error)
+  },
+  async getAbout({
+    commit
+  }) {
+    await client.getEntries({
+      content_type: "about",
+      order: '-sys.createdAt'
+    }).then(res =>
+      commit('setAbout', res.items)
     ).catch(console.error)
   }
 
