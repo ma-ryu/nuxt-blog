@@ -1,0 +1,53 @@
+<template>
+  <div class="mb-5">
+    <div class="d-flex mt-3 mb-3">
+      <font-awesome-icon class="mr-2" icon="code" size="lg" />
+      <h5 class="text-h6">My Skills</h5>
+    </div>
+    <v-treeview
+      class="text-left caption"
+      dense
+      hoverable
+      :items="items"
+    ></v-treeview>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        {
+          id: 1,
+          name: 'HTML'
+        },
+        {
+          id: 2,
+          name: 'CSS',
+          children: [
+            { id: 3, name: 'SCSS' },
+            { id: 4, name: 'BEM' },
+            { id: 5, name: 'Bootstrap' }
+          ]
+        },
+        {
+          id: 6,
+          name: 'JavaScript',
+          children: [
+            {
+              id: 7,
+              name: 'Vue.js',
+              children: [
+                { id: 8, name: 'Vuetify' },
+                { id: 9, name: 'Nuxt.js' }
+              ]
+            },
+            { id: 10, name: 'TypeScript : 学習中' }
+          ]
+        }
+      ]
+    }
+  }
+}
+</script>

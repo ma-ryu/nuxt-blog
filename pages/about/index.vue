@@ -1,9 +1,6 @@
 <template>
   <section class="latest-posts">
-    <div class="headline">
-      <h2>紹介</h2>
-      <p>ABOUT LIST</p>
-    </div>
+    <headline :headline="headline" />
     <div class="posts">
       <nuxt-link
         v-for="(about, index) in about"
@@ -29,7 +26,20 @@
 
 <script>
 import client from '~/plugins/contentful'
+import Headline from '~/components/headline.vue'
+
 export default {
+  components: {
+    Headline
+  },
+  data() {
+    return {
+      headline: {
+        JP: '制作実績',
+        ENG: 'WORK LIST'
+      }
+    }
+  },
   // eslint-disable-next-line no-unused-vars
   asyncData({ params }) {
     return (
