@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import client from '~/plugins/contentful'
+import { mapState, mapGetters } from 'vuex'
 import Post from '~/components/post.vue'
 import Headline from '~/components/headline.vue'
 
@@ -19,26 +19,16 @@ export default {
   },
   data() {
     return {
-      headline : {
-        JP: "最新情報",
-        ENG: "NEW POST"
+      headline: {
+        JP: '最新情報',
+        ENG: 'NEW POST'
       }
     }
   },
   // eslint-disable-next-line no-unused-vars
-  asyncData({ params }) {
-    return (
-      client
-        .getEntries({
-          content_type: 'post',
-          order: '-sys.createdAt'
-        })
-        .then((entries) => {
-          return { posts: entries.items }
-        })
-        // eslint-disable-next-line no-console
-        .catch((e) => console.log(e))
-    )
+  computed: {
+    ...mapState(['posts']), // 追記
+    ...mapGetters(['linkTo']) // 追記
   },
   head: {
     title: '記事一覧',

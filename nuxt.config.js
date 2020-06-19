@@ -11,6 +11,11 @@ export default {
     CTF_ACCESS_TOKEN: process.env.CTF_ACCESS_TOKEN,
     GA_ID: process.env.GA_ID
   },
+  router: {
+    middleware: [
+      'getContentful'
+    ]
+  },
   head: {
     title: 'Ma-ryu' || '',
     titleTemplate: '%s - Ma-ryu',

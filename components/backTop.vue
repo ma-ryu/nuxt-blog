@@ -35,13 +35,13 @@ export default {
 </script>
 
 <style lang="scss">
-.v-enter-active, .v-leave-active {
+.v-enter-active,
+.v-leave-active {
   transition: 0.8s ease;
-} 
-.v-enter, .v-leave-to {
+}
+.v-enter,
+.v-leave-to {
   opacity: 0;
   transform: translateX(20px);
 }
 </style>
-
-
