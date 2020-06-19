@@ -15,6 +15,7 @@
         <post v-for="(post, index) in posts" :key="index" :post="post" />
       </div>
     </section>
+    <back-top />
   </div>
 </template>
 
@@ -22,11 +23,13 @@
 import client from '~/plugins/contentful'
 import Post from '~/components/post.vue'
 import Profile from '~/components/profile.vue'
+import BackTop from '~/components/backTop.vue'
 
 export default {
   components: {
     Post,
-    Profile
+    Profile,
+    BackTop
   },
   // eslint-disable-next-line no-unused-vars
   asyncData({ params }) {
