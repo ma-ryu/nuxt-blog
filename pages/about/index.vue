@@ -93,7 +93,4 @@ export default {
     }
   }
 }
-section.latest-posts {
-  margin-top: 70px;
-}
 </style>

@@ -1,5 +1,6 @@
 <template>
   <section class="latest-posts">
+    <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
     <div class="posts">
       <post v-for="(post, index) in posts" :key="index" :post="post" />
@@ -11,11 +12,13 @@
 import { mapState } from 'vuex'
 import Post from '~/components/post.vue'
 import Headline from '~/components/headline.vue'
+import Breadcrumbs from '~/components/breadcrumbs.vue'
 
 export default {
   components: {
     Post,
-    Headline
+    Headline,
+    Breadcrumbs
   },
   data() {
     return {
@@ -28,6 +31,9 @@ export default {
   // eslint-disable-next-line no-unused-vars
   computed: {
     ...mapState(['posts']),
+    breadcrumbs() {
+      return [{ text: 'ホーム', to: '/' }]
+    }
   },
   head: {
     title: '記事一覧',
@@ -67,8 +73,5 @@ export default {
       }
     }
   }
-}
-section.latest-posts {
-  margin-top: 70px;
 }
 </style>

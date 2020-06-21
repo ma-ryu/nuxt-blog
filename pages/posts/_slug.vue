@@ -1,5 +1,6 @@
 <template>
-  <article class="article">
+  <article v-if="post" class="article">
+    <breadcrumbs :items="breadcrumbs" />
     <div class="single">
       <h1 class="post-title">{{ post.fields.title }}</h1>
       <p class="post-created-at">{{ formatDate(post.sys.createdAt) }}</p>
@@ -12,15 +13,29 @@
 </template>
 
 <script>
-
+import Breadcrumbs from '~/components/breadcrumbs.vue'
 export default {
+  components: {
+    Breadcrumbs
+  },
   async asyncData({ payload, store, params, error }) {
-    const post = payload || await store.state.posts.find(post => post.fields.slug === params.slug)
+    const post =
+      payload ||
+      (await store.state.posts.find((post) => post.fields.slug === params.slug))
 
     if (post) {
       return { post }
     } else {
       return error({ statusCode: 400 })
+    }
+  },
+  computed: {
+    breadcrumbs() {
+      const category = this.post.fields.category
+      return [
+        { text: 'ホーム', to: '/' },
+        { text: category.fields.name, to: '/' }
+      ]
     }
   },
   mounted() {
