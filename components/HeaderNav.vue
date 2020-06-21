@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="header__menu-line" @click="navOpen" :class="{ 'is-active': active }">
+    <div
+      class="header__menu-line"
+      @click="navOpen"
+      :class="{ 'is-active': active }"
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -13,6 +17,9 @@
           </li>
           <li @click="navOpen">
             <nuxt-link to="/posts">BLOG</nuxt-link>
+          </li>
+          <li @click="navOpen">
+            <nuxt-link to="/categories">CATEGORY</nuxt-link>
           </li>
           <li @click="navOpen">
             <nuxt-link to="/about">WORK</nuxt-link>
@@ -30,6 +37,9 @@
         </li>
         <li>
           <nuxt-link to="/posts">BLOG</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/categories">CATEGORY</nuxt-link>
         </li>
         <li>
           <nuxt-link to="/about">WORK</nuxt-link>

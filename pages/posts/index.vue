@@ -1,5 +1,6 @@
 <template>
   <section class="latest-posts">
+    <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
     <div class="posts">
       <post v-for="(post, index) in posts" :key="index" :post="post" />
@@ -8,37 +9,31 @@
 </template>
 
 <script>
-import client from '~/plugins/contentful'
+import { mapState } from 'vuex'
 import Post from '~/components/post.vue'
 import Headline from '~/components/headline.vue'
+import Breadcrumbs from '~/components/breadcrumbs.vue'
 
 export default {
   components: {
     Post,
-    Headline
+    Headline,
+    Breadcrumbs
   },
   data() {
     return {
-      headline : {
-        JP: "最新情報",
-        ENG: "NEW POST"
+      headline: {
+        JP: '最新情報',
+        ENG: 'NEW POST'
       }
     }
   },
   // eslint-disable-next-line no-unused-vars
-  asyncData({ params }) {
-    return (
-      client
-        .getEntries({
-          content_type: 'post',
-          order: '-sys.createdAt'
-        })
-        .then((entries) => {
-          return { posts: entries.items }
-        })
-        // eslint-disable-next-line no-console
-        .catch((e) => console.log(e))
-    )
+  computed: {
+    ...mapState(['posts']),
+    breadcrumbs() {
+      return [{ text: 'ホーム', to: '/' }]
+    }
   },
   head: {
     title: '記事一覧',
@@ -53,7 +48,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 * {
   font-family: sans-serif;
   margin: 0;
@@ -78,8 +73,5 @@ export default {
       }
     }
   }
-}
-section.latest-posts {
-  margin-top: 70px;
 }
 </style>

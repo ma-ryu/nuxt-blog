@@ -1,5 +1,6 @@
 <template>
-  <article class="article">
+  <article v-if="post" class="article">
+    <breadcrumbs :items="breadcrumbs" />
     <div class="single">
       <h1 class="post-title">{{ post.fields.title }}</h1>
       <p class="post-created-at">{{ formatDate(post.sys.createdAt) }}</p>
@@ -12,21 +13,29 @@
 </template>
 
 <script>
-import client from '~/plugins/contentful'
-
+import Breadcrumbs from '~/components/breadcrumbs.vue'
 export default {
-  // eslint-disable-next-line no-unused-vars
-  asyncData({ params, error, payload }) {
-    if (payload) return { post: payload }
-    return client
-      .getEntries({
-        content_type: 'post',
-        'fields.slug': params.slug
-      })
-      .then((entries) => {
-        return { post: entries.items[0] }
-      })
-      .catch((e) => console.log(e))
+  components: {
+    Breadcrumbs
+  },
+  async asyncData({ payload, store, params, error }) {
+    const post =
+      payload ||
+      (await store.state.posts.find((post) => post.fields.slug === params.slug))
+
+    if (post) {
+      return { post }
+    } else {
+      return error({ statusCode: 400 })
+    }
+  },
+  computed: {
+    breadcrumbs() {
+      return [
+        { text: 'ホーム', to: '/' },
+        { text: 'POSTS', to: '/posts' }
+      ]
+    }
   },
   mounted() {
     console.log(this.post)

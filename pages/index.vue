@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import client from '~/plugins/contentful'
+import { mapState } from 'vuex'
 import Post from '~/components/post.vue'
 import Profile from '~/components/profile.vue'
 import BackTop from '~/components/backTop.vue'
@@ -31,21 +31,10 @@ export default {
     Profile,
     BackTop
   },
-  // eslint-disable-next-line no-unused-vars
-  asyncData({ params }) {
-    return (
-      client
-        .getEntries({
-          content_type: 'post',
-          order: '-sys.createdAt'
-        })
-        .then((entries) => {
-          return { posts: entries.items }
-        })
-        // eslint-disable-next-line no-console
-        .catch((e) => console.log(e))
-    )
+  computed: {
+    ...mapState(['posts'])
   },
+  // eslint-disable-next-line no-unused-vars
 
   head: {
     title: 'ma-ryu tech-blog'
@@ -84,18 +73,7 @@ export default {
 }
 
 section.latest-posts {
-  padding: 10px;
-
-  .headline {
-    h2 {
-      width: 200px;
-      margin: 0 auto;
-      border-bottom: 1px solid black;
-      border-width: 1.5px;
-      border-radius: 6px;
-      padding-bottom: 8px;
-    }
-  }
+  padding: 16px;
   .posts {
     max-width: 1200px;
     margin: 0 auto;

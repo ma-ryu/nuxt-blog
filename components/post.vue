@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="post" :to="`posts/${post.fields.slug}`">
+  <div class="post">
     <div class="thumb">
       <v-img
         height="200px"
@@ -10,30 +10,68 @@
             : '../assets/img/noimage.png'
         "
       >
-        <div class="white--text text-left blue-grey darken-4 pl-3">
-          Category: {{ post.fields.category.fields.name }}
-        </div>
+        <v-card-text class="text-left pa-2">
+          <v-chip
+            small
+            dark
+            :color="categoryColor(post.fields.category)"
+            :to="linkTo('categories', post.fields.category)"
+            class="font-weight-bold"
+          >
+            {{ post.fields.category.fields.name }}
+          </v-chip>
+        </v-card-text>
       </v-img>
     </div>
     <div class="post-text">
       <p class="ma-1">{{ formatDate(post.sys.createdAt) }}</p>
       <div class="d-flex flex-wrap justify-start mb-3">
-        <v-chip
-          class="ma-1 secondary"
-          label
-          v-for="tag in post.fields.tag"
-          :key="tag.sys.id"
-        >
-          {{ tag.fields.name }}
-        </v-chip>
+        <div v-for="tag in post.fields.tag" :key="tag.sys.id">
+          <v-chip dark :color="tagColor(tag)" label class="ma-1">
+            {{ tag.fields.name }}
+          </v-chip>
+        </div>
       </div>
       <h2>{{ post.fields.title }}</h2>
+      <v-btn text :to="linkTo('posts', post)" class="d-flex justify-end pa-0"
+        >[<span class="primary--text">この記事を読む</span>]</v-btn
+      >
     </div>
-  </nuxt-link>
+  </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
+  computed: {
+    ...mapGetters(['linkTo']),
+    categoryColor() {
+      return (category) => {
+        switch (category.fields.name) {
+          case 'programming':
+            return 'rgb(0, 100, 40)'
+          case 'photography':
+            return 'rgb(0, 40, 150)'
+          default:
+            return 'grey darken-3'
+        }
+      }
+    },
+    tagColor() {
+      return (tag) => {
+        switch (tag.fields.name) {
+          case 'nuxt.js':
+            return '#3FB983'
+          case 'contentful':
+            return '#62B6E1'
+          case 'netlify':
+            return '#25C7B7'
+          default:
+            return 'grey darken-3'
+        }
+      }
+    }
+  },
   props: ['post'],
   methods: {
     formatDate(iso) {
@@ -48,7 +86,10 @@ export default {
 </script>
 
 <style lang="scss">
-a.post {
+a {
+  text-decoration: none;
+}
+.post {
   width: calc(100% - 20px);
   border-radius: 8px;
   @media (min-width: (768px)) {

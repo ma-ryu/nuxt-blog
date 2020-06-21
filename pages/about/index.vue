@@ -1,11 +1,12 @@
 <template>
   <section class="latest-posts">
+    <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
     <div class="posts">
       <nuxt-link
         v-for="(about, index) in about"
         :key="index"
-        :to="`about/${about.fields.slug}`"
+        :to="linkTo('about', about)"
         class="post"
       >
         <div class="thumb" v-if="about.fields.image">
@@ -25,12 +26,14 @@
 </template>
 
 <script>
-import client from '~/plugins/contentful'
+import { mapState, mapGetters } from 'vuex'
 import Headline from '~/components/headline.vue'
+import Breadcrumbs from '~/components/breadcrumbs.vue'
 
 export default {
   components: {
-    Headline
+    Headline,
+    Breadcrumbs
   },
   data() {
     return {
@@ -40,21 +43,14 @@ export default {
       }
     }
   },
-  // eslint-disable-next-line no-unused-vars
-  asyncData({ params }) {
-    return (
-      client
-        .getEntries({
-          content_type: 'about',
-          order: '-sys.createdAt'
-        })
-        .then((entries) => {
-          return { about: entries.items }
-        })
-        // eslint-disable-next-line no-console
-        .catch((e) => console.log(e))
-    )
+  computed: {
+    ...mapState(['about']),
+    ...mapGetters(['linkTo']),
+    breadcrumbs() {
+      return [{ text: 'ホーム', to: '/' }]
+    }
   },
+  // eslint-disable-next-line no-unused-vars
   methods: {
     formatDate(iso) {
       const date = new Date(iso)
@@ -77,7 +73,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 * {
   font-family: sans-serif;
   margin: 0;
@@ -102,8 +98,5 @@ export default {
       }
     }
   }
-}
-section.latest-posts {
-  margin-top: 70px;
 }
 </style>

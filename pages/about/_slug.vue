@@ -1,5 +1,6 @@
 <template>
   <article class="article">
+    <breadcrumbs :items="breadcrumbs" />
     <div class="single">
       <h1 class="post-title">{{ about.fields.title }}</h1>
       <p class="post-created-at">{{ formatDate(about.sys.createdAt) }}</p>
@@ -13,8 +14,12 @@
 
 <script>
 import client from '~/plugins/contentful'
+import Breadcrumbs from '~/components/breadcrumbs.vue'
 
 export default {
+  components: {
+    Breadcrumbs
+  },
   // eslint-disable-next-line no-unused-vars
   asyncData({ params, error, payload }) {
     if (payload) return { post: payload }
@@ -32,6 +37,15 @@ export default {
     console.log(this.about)
     // eslint-disable-next-line no-undef
     Prism.highlightAll()
+  },
+  computed: {
+    breadcrumbs() {
+      const category = this.post.fields.category
+      return [
+        { text: 'ホーム', to: '/' },
+        { text: category.fields.name, to: '/' }
+      ]
+    }
   },
   methods: {
     formatDate(iso) {
@@ -85,7 +99,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 article.article {
   padding: 10px;
   .single {
