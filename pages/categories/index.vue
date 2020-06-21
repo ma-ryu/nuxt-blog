@@ -1,5 +1,6 @@
 <template>
   <section class="chipList">
+    <breadcrumbs :items="breadcrumbs" />
     <headline :headline="catHeadline" />
     <div class="d-flex flex-wrap justify-start mb-3">
       <div v-for="(category, index) in categories" :key="index">
@@ -33,10 +34,12 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import Headline from '~/components/headline.vue'
+import Breadcrumbs from '~/components/breadcrumbs.vue'
 
 export default {
   components: {
-    Headline
+    Headline,
+    Breadcrumbs
   },
   data() {
     return {
@@ -54,6 +57,9 @@ export default {
     ...mapState(['categories']),
     ...mapState(['tagList']),
     ...mapGetters(['linkTo']),
+    breadcrumbs() {
+      return [{ text: 'ホーム', to: '/' }]
+    },
     categoryColor() {
       return (category) => {
         switch (category.fields.name) {

@@ -1,5 +1,6 @@
 <template>
   <section class="latest-posts">
+    <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
     <div class="posts">
       <nuxt-link
@@ -27,10 +28,12 @@
 <script>
 import { mapState, mapGetters } from 'vuex'
 import Headline from '~/components/headline.vue'
+import Breadcrumbs from '~/components/breadcrumbs.vue'
 
 export default {
   components: {
-    Headline
+    Headline,
+    Breadcrumbs
   },
   data() {
     return {
@@ -42,7 +45,10 @@ export default {
   },
   computed: {
     ...mapState(['about']),
-    ...mapGetters(['linkTo'])
+    ...mapGetters(['linkTo']),
+    breadcrumbs() {
+      return [{ text: 'ホーム', to: '/' }]
+    }
   },
   // eslint-disable-next-line no-unused-vars
   methods: {
