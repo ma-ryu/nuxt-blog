@@ -31,10 +31,9 @@ export default {
   },
   computed: {
     breadcrumbs() {
-      const category = this.post.fields.category
       return [
         { text: 'ホーム', to: '/' },
-        { text: category.fields.name, to: '/' }
+        { text: 'POSTS', to: '/posts' }
       ]
     }
   },

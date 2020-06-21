@@ -4,7 +4,7 @@
       <v-icon>mdi-chevron-right</v-icon>
     </template>
     <template v-slot:item="{ item }">
-      <v-breadcrumbs-item :to="item.to" nuxt>
+      <v-breadcrumbs-item :to="item.to" exact="true">
         {{ item.text }}
       </v-breadcrumbs-item>
     </template>
