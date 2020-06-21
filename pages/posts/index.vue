@@ -23,8 +23,8 @@ export default {
   data() {
     return {
       headline: {
-        JP: '最新情報',
-        ENG: 'NEW POST'
+        jp: '最新情報',
+        eng: 'NEW POST'
       }
     }
   },

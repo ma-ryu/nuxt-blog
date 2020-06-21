@@ -1,7 +1,6 @@
 <template>
   <div class="headline">
-    <h2>{{ headline.JP }}</h2>
-    <p>{{ headline.ENG }}</p>
+    <h2 class="px-0 py-2 mb-3">{{ headline.eng }}</h2>
   </div>
 </template>
 
@@ -13,13 +12,25 @@ export default {
 
 <style lang="scss" scoped>
 .headline {
-  h2 {
-    width: 250px;
-    margin: 0 auto;
+  .border {
+    width: 150px;
     border-bottom: 1px solid black;
-    border-width: 1.5px;
-    border-radius: 6px;
-    padding-bottom: 8px;
+    border-width: 2px;
+    margin: 0 auto;
+  }
+  h2 {
+    font-size: 32px;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 8px;
+    @media (max-width: (768px)) {
+      font-size: 28px;
+    }
+  }
+  p {
+    @media (max-width: (768px)) {
+      font-size: 24px;
+    }
   }
 }
 </style>

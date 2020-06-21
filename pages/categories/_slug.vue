@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="latest-posts">
     <breadcrumbs :items="breadcrumbs" />
-    <headline :headline="headline" />
+    <headline :headline="catHeadline" />
     <div class="posts">
       <post v-for="(post, index) in relatedPosts" :key="index" :post="post" />
     </div>
@@ -19,22 +19,17 @@ export default {
     Headline,
     Breadcrumbs
   },
-  data() {
-    return {
-      headline: {
-        JP: '最新情報',
-        ENG: 'NEW POST'
-      }
-    }
-  },
   computed: {
+    catHeadline() {
+      return { jp: this.category.fields.name.toUpperCase(), eng: 'PHOTO POST' }
+    },
     relatedPosts() {
       return this.$store.getters.relatedPosts(this.category)
     },
     breadcrumbs() {
       return [
         { text: 'ホーム', to: '/' },
-        { text: "CATEGORY" , to: '/categories'  },
+        { text: 'CATEGORY', to: '/categories' }
       ]
     }
   },
@@ -54,3 +49,18 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.latest-posts {
+  padding: 16px;
+  .posts {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #ddd;
+  }
+}
+</style>

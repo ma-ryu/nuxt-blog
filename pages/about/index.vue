@@ -38,8 +38,8 @@ export default {
   data() {
     return {
       headline: {
-        JP: '制作実績',
-        ENG: 'WORK LIST'
+        jp: '制作実績',
+        eng: 'WORK LIST'
       }
     }
   },

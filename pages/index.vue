@@ -7,10 +7,7 @@
     </section>
     <profile />
     <section class="latest-posts">
-      <div class="headline">
-        <h2>最新情報</h2>
-        <p>NEW POST</p>
-      </div>
+      <headline :headline="headline" />
       <div class="posts">
         <post v-for="(post, index) in posts" :key="index" :post="post" />
       </div>
@@ -24,15 +21,20 @@ import { mapState } from 'vuex'
 import Post from '~/components/post.vue'
 import Profile from '~/components/profile.vue'
 import BackTop from '~/components/backTop.vue'
+import Headline from '~/components/headline.vue'
 
 export default {
   components: {
     Post,
     Profile,
-    BackTop
+    BackTop,
+    Headline
   },
   computed: {
-    ...mapState(['posts'])
+    ...mapState(['posts']),
+    headline() {
+      return { jp: '最新情報', eng: 'NEW POST' }
+    }
   },
   // eslint-disable-next-line no-unused-vars
 

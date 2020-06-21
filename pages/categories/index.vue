@@ -44,12 +44,12 @@ export default {
   data() {
     return {
       catHeadline: {
-        JP: 'カテゴリー',
-        ENG: 'CATEGORY'
+        jp: 'カテゴリー',
+        eng: 'CATEGORY'
       },
       tagHeadline: {
-        JP: 'タグ',
-        ENG: 'TAG'
+        jp: 'タグ',
+        eng: 'TAG'
       }
     }
   },
