@@ -5,7 +5,7 @@
         <img src="../assets/img/bg-home.jpg" alt />
       </div>
     </section>
-    <profile />
+    <profile v-show="$vuetify.breakpoint.xs"/>
     <section class="latest-posts">
       <headline :headline="headline" />
       <v-row>
@@ -24,6 +24,7 @@ import BackTop from '~/components/backTop.vue'
 import Headline from '~/components/headline.vue'
 
 export default {
+  layout: 'top',
   components: {
     Post,
     Profile,
@@ -33,15 +34,21 @@ export default {
   computed: {
     ...mapState(['posts']),
     headline() {
-      return { 
-        jp: '最新情報', 
+      return {
+        jp: '最新情報',
         eng: 'NEW POST',
-        icon: 'mdi-lead-pencil' 
-        }
+        icon: 'mdi-lead-pencil'
+      }
+    },
+    isPc() {
+      if (window.innerWidth >= 800) {
+        console.log(window.innerWidth)
+        return true
+      } else {
+        return false
+      }
     }
   },
-  // eslint-disable-next-line no-unused-vars
-
   head: {
     title: 'ma-ryu tech-blog'
   }
@@ -54,20 +61,17 @@ export default {
   margin: 0;
 }
 .jumbtron {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  margin-top: -8px;
+  margin: 16px 32px;
+  padding: 0 64px;
   @media (max-width: (768px)) {
     margin-top: 55px;
+    margin: 0;
+    padding: 0;
   }
   .bg-home {
     img {
-      max-width: 100vw;
-      width: 100vw;
+      max-width: 100%;
+      width: 100%;
       height: 40vh;
       object-fit: cover;
       object-position: 0 100%;

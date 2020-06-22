@@ -45,11 +45,11 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  width: 80%;
   position: relative;
   top: 0;
   bottom: 0;
-  margin: 24px auto;
+  margin: 0 auto;
+  padding: 36px;
   .about-headline {
     text-align: left;
     display: flex;
