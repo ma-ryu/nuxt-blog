@@ -1,14 +1,11 @@
 <template>
-  <div class="post">
-    <div class="thumb">
+  <v-col cols="md-3">
+    <v-card flat height="100%">
       <v-img
+        v-if="post.fields.image"
         height="200px"
         cover
-        :src="
-          post.fields.image
-            ? post.fields.image.fields.file.url
-            : '../assets/img/noimage.png'
-        "
+        :src="post.fields.image.fields.file.url"
       >
         <v-card-text class="text-left pa-2">
           <v-chip
@@ -22,22 +19,34 @@
           </v-chip>
         </v-card-text>
       </v-img>
-    </div>
-    <div class="post-text">
-      <p class="ma-1">{{ formatDate(post.sys.createdAt) }}</p>
-      <div class="d-flex flex-wrap justify-start mb-3">
-        <div v-for="tag in post.fields.tag" :key="tag.sys.id">
-          <v-chip dark :color="tagColor(tag)" label class="ma-1">
-            {{ tag.fields.name }}
-          </v-chip>
+      <v-card-text>
+        <p class="ma-1 text-right">{{ formatDate(post.sys.createdAt) }}</p>
+        <div class="d-flex flex-wrap justify-start mb-3">
+          <div v-for="tag in post.fields.tag" :key="tag.sys.id">
+            <v-chip dark :color="tagColor(tag)" label class="ma-1">
+              {{ tag.fields.name }}
+            </v-chip>
+          </div>
         </div>
-      </div>
-      <h2>{{ post.fields.title }}</h2>
-      <v-btn text :to="linkTo('posts', post)" class="d-flex justify-end pa-0"
-        >[<span class="primary--text">この記事を読む</span>]</v-btn
-      >
-    </div>
-  </div>
+        <h2>{{ post.fields.title }}</h2>
+        <v-spacer />
+        <v-btn
+          v-if="post.sys.contentType.sys.id === 'about'"
+          text
+          :to="linkTo('about', post)"
+          class="d-flex justify-end pa-0"
+          >[<span class="primary--text">この記事を読む</span>]</v-btn
+        >
+        <v-btn
+          v-else
+          text
+          :to="linkTo('posts', post)"
+          class="d-flex justify-end pa-0"
+          >[<span class="primary--text">この記事を読む</span>]</v-btn
+        >
+      </v-card-text>
+    </v-card>
+  </v-col>
 </template>
 
 <script>
@@ -85,36 +94,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-a {
-  text-decoration: none;
-}
-.post {
-  width: calc(100% - 20px);
-  border-radius: 8px;
-  @media (min-width: (768px)) {
-    width: calc(100% / 4 - 20px);
-  }
-  margin: 10px;
-  background: #fff;
-  text-decoration: none;
-  color: #111;
-  .thumb {
-    overflow: hidden;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  .post-text {
-    padding: 5px 10px 10px;
-    color: black;
-    p {
-      text-align: right;
-    }
-    h2 {
-      text-align: left;
-      width: fit-content;
-      font-size: 20px;
-    }
-  }
-}
-</style>
+<style lang="scss"></style>

@@ -8,9 +8,9 @@
     <profile />
     <section class="latest-posts">
       <headline :headline="headline" />
-      <div class="posts">
-        <post v-for="(post, index) in posts" :key="index" :post="post" />
-      </div>
+      <v-row>
+        <post v-for="(post, index) in posts" :key="index" :post="post"/>
+      </v-row>
     </section>
     <back-top />
   </div>
@@ -76,14 +76,5 @@ export default {
 
 section.latest-posts {
   padding: 16px;
-  .posts {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background: #ddd;
-  }
 }
 </style>

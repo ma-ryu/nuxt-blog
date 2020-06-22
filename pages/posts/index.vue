@@ -2,9 +2,9 @@
   <section class="latest-posts">
     <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
-    <div class="posts">
+    <v-row>
       <post v-for="(post, index) in posts" :key="index" :post="post" />
-    </div>
+    </v-row>
   </section>
 </template>
 

@@ -2,9 +2,9 @@
   <div class="latest-posts">
     <breadcrumbs :items="breadcrumbs" />
     <headline :headline="catHeadline" />
-    <div class="posts">
+    <v-row>
       <post v-for="(post, index) in relatedPosts" :key="index" :post="post" />
-    </div>
+    </v-row>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     catHeadline() {
-      return { jp: this.category.fields.name.toUpperCase(), eng: 'PHOTO POST' }
+      return { jp: '', eng: this.category.fields.name.toUpperCase() }
     },
     relatedPosts() {
       return this.$store.getters.relatedPosts(this.category)
@@ -53,14 +53,5 @@ export default {
 <style lang="scss">
 .latest-posts {
   padding: 16px;
-  .posts {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background: #ddd;
-  }
 }
 </style>
