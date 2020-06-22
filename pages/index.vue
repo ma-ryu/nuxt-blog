@@ -9,7 +9,7 @@
     <section class="latest-posts">
       <headline :headline="headline" />
       <v-row>
-        <post v-for="(post, index) in posts" :key="index" :post="post"/>
+        <post v-for="(post, index) in posts" :key="index" :post="post" />
       </v-row>
     </section>
     <back-top />
@@ -33,7 +33,11 @@ export default {
   computed: {
     ...mapState(['posts']),
     headline() {
-      return { jp: '最新情報', eng: 'NEW POST' }
+      return {
+        jp: '最新情報',
+        eng: 'NEW POST',
+        icon: 'mdi-lead-pencil'
+      }
     }
   },
   // eslint-disable-next-line no-unused-vars
@@ -75,6 +79,6 @@ export default {
 }
 
 section.latest-posts {
-  padding: 16px;
+  padding: 32px;
 }
 </style>

@@ -24,7 +24,8 @@ export default {
     return {
       headline: {
         jp: '制作実績',
-        eng: 'WORK LIST'
+        eng: 'WORK LIST',
+        icon: 'mdi-xml'
       }
     }
   },

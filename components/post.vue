@@ -23,7 +23,13 @@
         <p class="ma-1 text-right">{{ formatDate(post.sys.createdAt) }}</p>
         <div class="d-flex flex-wrap justify-start mb-3">
           <div v-for="tag in post.fields.tag" :key="tag.sys.id">
-            <v-chip dark :color="tagColor(tag)" label class="ma-1">
+            <v-chip
+              dark
+              :color="tagColor(tag)"
+              :to="linkTo('tags', tag)"
+              label
+              class="ma-1"
+            >
               {{ tag.fields.name }}
             </v-chip>
           </div>

@@ -1,6 +1,9 @@
 <template>
   <div class="headline">
-    <h2 class="px-0 py-2 mb-3">{{ headline.eng }}</h2>
+    <h2 class="px-0 py-2 mb-3">
+      <v-icon class="mb-1" v-if="headline.icon">{{ headline.icon }}</v-icon>
+      {{ headline.eng }}
+    </h2>
   </div>
 </template>
 
