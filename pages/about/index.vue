@@ -2,44 +2,30 @@
   <section class="latest-posts">
     <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
-    <div class="posts">
-      <nuxt-link
-        v-for="(about, index) in about"
-        :key="index"
-        :to="linkTo('about', about)"
-        class="post"
-      >
-        <div class="thumb" v-if="about.fields.image">
-          <img
-            :src="
-              about.fields.image ? about.fields.image.fields.file.url : null
-            "
-          />
-        </div>
-        <div class="post-text">
-          <p>{{ formatDate(about.sys.createdAt) }}</p>
-          <h2>{{ about.fields.title }}</h2>
-        </div>
-      </nuxt-link>
-    </div>
+    <v-row>
+      <post v-for="(about, index) in about" :key="index" :post="about" />
+    </v-row>
   </section>
 </template>
 
 <script>
 import { mapState, mapGetters } from 'vuex'
+import Post from '~/components/post.vue'
 import Headline from '~/components/headline.vue'
 import Breadcrumbs from '~/components/breadcrumbs.vue'
 
 export default {
   components: {
+    Post,
     Headline,
     Breadcrumbs
   },
   data() {
     return {
       headline: {
-        JP: '制作実績',
-        ENG: 'WORK LIST'
+        jp: '制作実績',
+        eng: 'WORK LIST',
+        icon: 'mdi-xml'
       }
     }
   },
@@ -48,16 +34,6 @@ export default {
     ...mapGetters(['linkTo']),
     breadcrumbs() {
       return [{ text: 'ホーム', to: '/' }]
-    }
-  },
-  // eslint-disable-next-line no-unused-vars
-  methods: {
-    formatDate(iso) {
-      const date = new Date(iso)
-      const yyyy = String(date.getFullYear())
-      const mm = String(date.getMonth() + 1).padStart(2, '0')
-      const dd = String(date.getDate()).padStart(2, '0')
-      return `${yyyy}.${mm}.${dd}`
     }
   },
   head: {

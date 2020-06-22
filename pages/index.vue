@@ -7,13 +7,10 @@
     </section>
     <profile />
     <section class="latest-posts">
-      <div class="headline">
-        <h2>最新情報</h2>
-        <p>NEW POST</p>
-      </div>
-      <div class="posts">
+      <headline :headline="headline" />
+      <v-row>
         <post v-for="(post, index) in posts" :key="index" :post="post" />
-      </div>
+      </v-row>
     </section>
     <back-top />
   </div>
@@ -24,15 +21,24 @@ import { mapState } from 'vuex'
 import Post from '~/components/post.vue'
 import Profile from '~/components/profile.vue'
 import BackTop from '~/components/backTop.vue'
+import Headline from '~/components/headline.vue'
 
 export default {
   components: {
     Post,
     Profile,
-    BackTop
+    BackTop,
+    Headline
   },
   computed: {
-    ...mapState(['posts'])
+    ...mapState(['posts']),
+    headline() {
+      return {
+        jp: '最新情報',
+        eng: 'NEW POST',
+        icon: 'mdi-lead-pencil'
+      }
+    }
   },
   // eslint-disable-next-line no-unused-vars
 
@@ -73,15 +79,6 @@ export default {
 }
 
 section.latest-posts {
-  padding: 16px;
-  .posts {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background: #ddd;
-  }
+  padding: 32px;
 }
 </style>

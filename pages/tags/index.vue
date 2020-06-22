@@ -3,22 +3,6 @@
     <breadcrumbs :items="breadcrumbs" />
     <v-row>
       <v-col cols="md-6">
-        <headline :headline="catHeadline" />
-        <div class="d-flex flex-wrap justify-start mb-3">
-          <div v-for="(category, index) in categories" :key="index">
-            <v-chip
-              small
-              dark
-              :color="categoryColor(category)"
-              :to="linkTo('categories', category)"
-              class="font-weight-bold text-h6 pa-5 ma-3"
-            >
-              {{ category.fields.name }}
-            </v-chip>
-          </div>
-        </div>
-      </v-col>
-      <v-col cols="md-6">
         <headline :headline="tagHeadline" />
         <div class="d-flex flex-wrap justify-start mb-3">
           <div v-for="(tag, index) in tagList" :key="index" clss="d-flex">
@@ -30,6 +14,22 @@
               class="font-weight-bold text-h6 pa-5 ma-3"
             >
               {{ tag.fields.name }}
+            </v-chip>
+          </div>
+        </div>
+      </v-col>
+      <v-col cols="md-6">
+        <headline :headline="catHeadline" />
+        <div class="d-flex flex-wrap justify-start mb-3">
+          <div v-for="(category, index) in categories" :key="index">
+            <v-chip
+              small
+              dark
+              :color="categoryColor(category)"
+              :to="linkTo('categories', category)"
+              class="font-weight-bold text-h6 pa-5 ma-3"
+            >
+              {{ category.fields.name }}
             </v-chip>
           </div>
         </div>

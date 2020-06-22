@@ -2,9 +2,9 @@
   <section class="latest-posts">
     <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
-    <div class="posts">
+    <v-row>
       <post v-for="(post, index) in posts" :key="index" :post="post" />
-    </div>
+    </v-row>
   </section>
 </template>
 
@@ -20,19 +20,18 @@ export default {
     Headline,
     Breadcrumbs
   },
-  data() {
-    return {
-      headline: {
-        JP: '最新情報',
-        ENG: 'NEW POST'
-      }
-    }
-  },
   // eslint-disable-next-line no-unused-vars
   computed: {
     ...mapState(['posts']),
     breadcrumbs() {
       return [{ text: 'ホーム', to: '/' }]
+    },
+    headline() {
+      return {
+        jp: '最新情報',
+        eng: 'NEW POST',
+        icon: 'mdi-lead-pencil'
+      }
     }
   },
   head: {
