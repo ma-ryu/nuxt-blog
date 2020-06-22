@@ -1,5 +1,5 @@
 <template>
-  <article v-if="post" class="article">
+  <article class="article">
     <breadcrumbs :items="breadcrumbs" />
     <div class="single">
       <h1 class="post-title">{{ post.fields.title }}</h1>
@@ -69,7 +69,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://ma-ryu-portfolio.netlify.app/posts/${this.post.fields.slug}`
+          content: `https://ma-ryu.netlify.app/posts/${this.post.fields.slug}`
         },
         {
           hid: 'og:title',
@@ -156,6 +156,7 @@ article.article {
       ul {
         padding-left: 24px;
         li {
+          display: flex;
           font-size: 16px;
           @media (max-width: (768px)) {
             font-size: 8px;

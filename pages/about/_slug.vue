@@ -3,7 +3,7 @@
     <breadcrumbs :items="breadcrumbs" />
     <div class="single">
       <h1 class="post-title">{{ about.fields.title }}</h1>
-      <p class="post-created-at">{{ formatDate(about.sys.createdAt) }}</p>
+      <!-- <p class="post-created-at">{{ formatDate(about.sys.createdAt) }}</p> -->
       <div
         class="post-content line-numbers"
         v-html="$md.render(about.fields.body)"
@@ -13,25 +13,24 @@
 </template>
 
 <script>
-import client from '~/plugins/contentful'
 import Breadcrumbs from '~/components/breadcrumbs.vue'
 
 export default {
   components: {
     Breadcrumbs
   },
-  // eslint-disable-next-line no-unused-vars
-  asyncData({ params, error, payload }) {
-    if (payload) return { post: payload }
-    return client
-      .getEntries({
-        content_type: 'about',
-        'fields.slug': params.slug
-      })
-      .then((entries) => {
-        return { about: entries.items[0] }
-      })
-      .catch((e) => console.log(e))
+  async asyncData({ payload, store, params, error }) {
+    const about =
+      payload ||
+      (await store.state.about.find(
+        (about) => about.fields.slug === params.slug
+      ))
+
+    if (about) {
+      return { about }
+    } else {
+      return error({ statusCode: 400 })
+    }
   },
   mounted() {
     console.log(this.about)
@@ -40,20 +39,11 @@ export default {
   },
   computed: {
     breadcrumbs() {
-      const category = this.post.fields.category
+      const category = this.about.fields.category
       return [
         { text: 'ホーム', to: '/' },
-        { text: category.fields.name, to: '/' }
+        { text: category.fields.name, to: '/about' }
       ]
-    }
-  },
-  methods: {
-    formatDate(iso) {
-      const date = new Date(iso)
-      const yyyy = String(date.getFullYear())
-      const mm = String(date.getMonth() + 1).padStart(2, '0')
-      const dd = String(date.getDate()).padStart(2, '0')
-      return `${yyyy}.${mm}.${dd}`
     }
   },
   head() {
@@ -63,33 +53,28 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.post.fields.description
+          content: ''
         },
         {
           hid: 'og:site_name',
           property: 'og:site_name',
-          content: this.post.fields.title + ' - Ma-ryu'
+          content: this.about.fields.title + ' - Ma-ryu'
         },
         { hid: 'og:type', property: 'og:type', content: 'website' },
         {
           hid: 'og:url',
           property: 'og:url',
-          content: `https://ma-ryu-portfolio.netlify.app/about/${this.post.fields.slug}`
+          content: `https://ma-ryu.netlify.app/about/${this.about.fields.slug}`
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: this.post.fields.title
+          content: this.about.fields.title
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.post.fields.description
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: 'https:' + this.post.fields.image.fields.file.url
+          content: ''
         },
         { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
         { hid: 'twitter:site', name: 'twitter:site', content: '@chalu-log' }
