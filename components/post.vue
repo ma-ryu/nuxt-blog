@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="md-3">
+  <v-col cols="md-4">
     <v-card flat height="100%">
       <v-img
         v-if="post.fields.image"

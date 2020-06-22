@@ -52,25 +52,4 @@ export default {
   font-family: sans-serif;
   margin: 0;
 }
-.jumbtron {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  margin-top: -8px;
-  .bg-home {
-    img {
-      max-width: 100vw;
-      width: 100vw;
-      height: 40vh;
-      object-fit: cover;
-      object-position: 0 100%;
-      @media (max-width: (768px)) {
-        height: 25vh;
-      }
-    }
-  }
-}
 </style>
