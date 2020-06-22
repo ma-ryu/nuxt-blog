@@ -33,11 +33,11 @@ export default {
   computed: {
     ...mapState(['posts']),
     headline() {
-      return {
-        jp: '最新情報',
+      return { 
+        jp: '最新情報', 
         eng: 'NEW POST',
-        icon: 'mdi-lead-pencil'
-      }
+        icon: 'mdi-lead-pencil' 
+        }
     }
   },
   // eslint-disable-next-line no-unused-vars
