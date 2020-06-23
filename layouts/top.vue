@@ -1,8 +1,9 @@
 <template>
   <v-app>
     <Header />
+    
     <main>
-      <v-row class="mx-0">
+      <v-row class="main-wrapper">
         <nuxt class="main" />
         <sidebar
           class="sidebar"
@@ -34,10 +35,19 @@ body {
   margin: 0;
 }
 main {
+  background-color:#ddd;
+}
+.main-wrapper {
+  margin: 0 auto;
   min-height: 600px;
   background-color: #ddd;
   text-align: center;
+  max-width: 1200px;
+  @media (max-width: (768px)) {
+    width: 100%;
+  }
 }
+
 .main {
   width: 75%;
   @media (max-width: (768px)) {

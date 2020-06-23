@@ -2,7 +2,9 @@
   <v-app>
     <Header />
     <main>
-      <nuxt class="main" />
+      <div class="main-wrapper">
+        <nuxt class="main" />
+      </div>
     </main>
     <Footer />
   </v-app>
@@ -26,10 +28,18 @@ body {
   margin: 0;
 }
 main {
+  background-color:#ddd;
+}
+.main-wrapper {
   min-height: 600px;
   background-color: #ddd;
   text-align: center;
   padding: 8px;
+  width: 1000px;
+  margin: 0 auto;
+  @media (max-width: (768px)) {
+    width: 100%;
+  }
 }
 .main {
   @media (max-width: (768px)) {

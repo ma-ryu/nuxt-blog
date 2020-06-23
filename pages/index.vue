@@ -2,7 +2,7 @@
   <div>
     <section class="jumbtron">
       <div class="bg-home">
-        <img src="../assets/img/bg-home.jpg" alt />
+        <carousel />
       </div>
     </section>
     <profile v-show="$vuetify.breakpoint.xs"/>
@@ -22,6 +22,7 @@ import Post from '~/components/post.vue'
 import Profile from '~/components/profile.vue'
 import BackTop from '~/components/backTop.vue'
 import Headline from '~/components/headline.vue'
+import Carousel from '~/components/carousel.vue'
 
 export default {
   layout: 'top',
@@ -29,7 +30,8 @@ export default {
     Post,
     Profile,
     BackTop,
-    Headline
+    Headline,
+    Carousel
   },
   computed: {
     ...mapState(['posts']),
@@ -61,28 +63,17 @@ export default {
   margin: 0;
 }
 .jumbtron {
-  margin: 16px 32px;
-  padding: 0 64px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  padding: 0 32px;
   @media (max-width: (768px)) {
     margin-top: 55px;
     margin: 0;
     padding: 0;
   }
-  .bg-home {
-    img {
-      max-width: 100%;
-      width: 100%;
-      height: 40vh;
-      object-fit: cover;
-      object-position: 0 100%;
-      @media (max-width: (768px)) {
-        height: 30vh;
-      }
-    }
-  }
 }
 
 section.latest-posts {
-  padding: 32px;
+  padding:16px;
 }
 </style>

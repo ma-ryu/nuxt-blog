@@ -29,19 +29,15 @@ export const getters = {
 export const mutations = {
   setPosts(state, payload) {
     state.posts = payload
-    console.log(state.posts)
   },
   setAbout(state, payload) {
     state.about = payload
-    console.log(state.about)
   },
   setCategories(state, payload) {
     state.categories = payload
-    console.log(state.categories)
   },
   setTagList(state, payload) {
     state.tagList = payload
-    console.log(state.tagList)
   },
 
 }
