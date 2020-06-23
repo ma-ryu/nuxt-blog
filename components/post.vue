@@ -34,21 +34,21 @@
             </v-chip>
           </div>
         </div>
-        <h2>{{ post.fields.title }}</h2>
+        <h2 class="text-left">{{ post.fields.title }}</h2>
         <v-spacer />
         <v-btn
           v-if="post.sys.contentType.sys.id === 'about'"
           text
           :to="linkTo('about', post)"
-          class="d-flex justify-end pa-0"
-          >[<span class="primary--text">この記事を読む</span>]</v-btn
+          class=""
+          >READ MORE</v-btn
         >
         <v-btn
           v-else
-          text
+          outlined
           :to="linkTo('posts', post)"
-          class="d-flex justify-end pa-0"
-          >[<span class="primary--text">この記事を読む</span>]</v-btn
+          class="mt-3"
+          >READ MORE</v-btn
         >
       </v-card-text>
     </v-card>

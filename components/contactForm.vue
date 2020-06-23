@@ -38,16 +38,16 @@ export default {}
       margin-bottom: 16px;
       padding: 0.5px;
       border-radius: 25px;
-      box-shadow: inset 5px 5px 5px rgb(200, 200, 200),
-        inset -6px -6px 10px rgb(230, 230, 230);
+      box-shadow: inset 6px 6px 5px rgb(180, 180, 180),
+        inset -6px -6px 10px rgb(245, 245, 245);
       width: 100%;
       box-sizing: border-box;
       transition: all 0.2s ease-in-out;
       appearance: none;
       -webkit-appearance: none;
       &:hover {
-        box-shadow: -8px -8px 20px rgb(240, 240, 240),
-          8px 8px 15px rgb(190, 190, 190);
+        box-shadow: -8px -8px 15px rgb(245, 245, 245),
+          8px 8px 15px rgb(180, 180, 180);
       }
       input {
         width: 500px;
@@ -55,9 +55,6 @@ export default {}
         border: none;
         &:focus {
           outline: none;
-        }
-        &:valid {
-          background-color: #ddd;
         }
         @media (max-width: (768px)) {
           width: 300px;
@@ -87,20 +84,20 @@ export default {}
       background: #ddd;
       border-radius: 25px;
       font-weight: bold;
-      box-shadow: -8px -8px 20px rgb(230, 230, 230),
-        8px 8px 15px rgb(200, 200, 200);
+      box-shadow: -8px -8px 15px rgb(245, 245, 245),
+        8px 8px 15px rgb(180, 180, 180);
       transition: all 0.2s ease-in-out;
       cursor: pointer;
       font-weight: 600;
       &:hover {
-        box-shadow: inset -5px -5px 20px rgb(240, 240, 240),
-          inset 5px 5px 15px rgb(190, 190, 190);
-          outline: none;
+        box-shadow: -8px -8px 15px rgba(245, 245, 245,0.6),
+          8px 8px 15px rgba(180, 180, 180,0.6);
+        outline: none;
       }
       &:active {
-        box-shadow: inset 5px 5px 5px rgb(200, 200, 200),
-          inset -6px -6px 10px rgb(230, 230, 230);
-          outline: none;
+        box-shadow: inset 6px 6px 5px rgb(180, 180, 180),
+          inset -6px -6px 10px rgb(245, 245, 245);
+        outline: none;
       }
     }
   }

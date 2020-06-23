@@ -5,7 +5,7 @@
         <carousel />
       </div>
     </section>
-    <profile v-show="$vuetify.breakpoint.xs"/>
+    <profile v-show="$vuetify.breakpoint.xs" />
     <section class="latest-posts">
       <headline :headline="headline" />
       <v-row>
@@ -59,7 +59,6 @@ export default {
 
 <style lang="scss">
 * {
-  font-family: sans-serif;
   margin: 0;
 }
 .jumbtron {
@@ -74,6 +73,6 @@ export default {
 }
 
 section.latest-posts {
-  padding:16px;
+  padding: 16px;
 }
 </style>

@@ -92,12 +92,9 @@ export default {
         }
         &:nth-child(2) {
           top: 14px;
-          width: 80%;
-          margin-left: 6px;
         }
         &:last-child {
           bottom: 0;
-          width: 80%;
         }
       }
       &.is-active {
@@ -124,7 +121,7 @@ export default {
     display: block;
     @media (max-width: (768px)) {
       display: none;
-      background-color: rgba(238, 238, 238, 0.95);
+      background-color: rgba(238, 238, 238, 0.98);
       z-index: 30;
       padding: 2rem 1rem;
       width: 100%;
@@ -142,9 +139,28 @@ export default {
         z-index: -1;
       }
       li {
-        padding-right: 16px;
+        padding: 12px;
+        margin-right: 16px;
+        border-radius: 20px;
+        box-shadow: -8px -8px 15px rgb(245, 245, 245),
+          8px 8px 15px rgb(180, 180, 180);
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        font-weight: 600;
+        &:hover {
+          box-shadow: -8px -8px 15px rgba(245, 245, 245, 0.6),
+            8px 8px 15px rgba(180, 180, 180, 0.6);
+          outline: none;
+        }
+        &:active {
+          box-shadow: inset 6px 6px 5px rgb(180, 180, 180),
+            inset -6px -6px 10px rgb(245, 245, 245);
+          outline: none;
+        }
         @media (max-width: (768px)) {
           padding-top: 16px;
+          margin: 16px;
+          text-align: center;
         }
         a {
           text-decoration: none;
@@ -177,7 +193,7 @@ export default {
 
   .nav-enter-active,
   .nav-leave-active {
-    transition: opacity 1s ease;
+    transition: opacity 0.65s ease;
   }
 }
 </style>

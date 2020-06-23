@@ -49,7 +49,8 @@ export default {
   top: 0;
   bottom: 0;
   margin: 0 auto;
-  padding: 36px;
+  padding: 8px;
+  margin-top: 16px;
   .about-headline {
     text-align: left;
     display: flex;
@@ -59,8 +60,12 @@ export default {
     .content {
       padding: 8px;
       p {
+        padding: 16px;
         line-height: 2;
         font-size: 12px;
+        border-radius: 25px;
+        box-shadow: inset 5px 5px 10px rgb(180, 180, 180),
+          inset -5px -5px 10px rgb(240, 240, 240);
       }
     }
   }
@@ -68,7 +73,25 @@ export default {
     text-decoration: none;
     color: black;
     p {
-      border: 1px solid black;
+      padding: 8px;
+      width: 200px;
+      background: #ddd;
+      border-radius: 25px;
+      font-weight: bold;
+      box-shadow: -10px -10px 15px rgb(245, 245, 245),
+        8px 8px 10px rgb(180, 180, 180);
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      font-weight: 600;
+      &:hover {
+        box-shadow: -8px -8px 15px rgba(245, 245, 245, 0.6),
+          8px 8px 15px rgba(180, 180, 180, 0.6);
+      }
+      &:active {
+        box-shadow: inset 5px 5px 5px rgb(180, 180, 180),
+          inset -6px -6px 10px rgb(245, 245, 245);
+        outline: none;
+      }
     }
   }
 }

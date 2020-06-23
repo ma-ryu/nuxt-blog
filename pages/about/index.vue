@@ -51,7 +51,6 @@ export default {
 
 <style lang="scss">
 * {
-  font-family: sans-serif;
   margin: 0;
 }
 </style>

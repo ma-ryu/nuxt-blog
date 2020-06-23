@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Header />
-    
+
     <main>
       <v-row class="main-wrapper">
         <nuxt class="main" />
@@ -27,15 +27,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-html {
-  font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    sans-serif;
+* {
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN',
+    'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック',
+    'MS PGothic', sans-serif;
 }
 body {
   margin: 0;
 }
 main {
-  background-color:#ddd;
+  background-color: #ddd;
 }
 .main-wrapper {
   margin: 0 auto;

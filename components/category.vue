@@ -1,6 +1,6 @@
 <template>
   <div class="pa-3">
-    <v-card class="grey lighten-2">
+    <v-card flat class="grey lighten-3">
       <v-card-title>カテゴリ一覧</v-card-title>
       <div class="d-flex flex-wrap justify-start mb-3">
         <div v-for="(category, index) in categories" :key="index">
@@ -16,7 +16,7 @@
         </div>
       </div>
     </v-card>
-    <v-card class="grey lighten-2">
+    <v-card  flat class="grey lighten-3">
       <v-card-title>タグ一覧</v-card-title>
       <div class="d-flex flex-wrap justify-start mb-3">
         <div v-for="(tag, index) in tagList" :key="index" clss="d-flex">

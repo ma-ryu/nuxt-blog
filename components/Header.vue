@@ -23,6 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .header-inner {
+  background-color:#ddd;
   display: flex;
   height: 100px;
   justify-content: space-between;
@@ -31,7 +32,6 @@ export default {
     height: 65px;
     position: fixed;
     width: 100%;
-    background-color: #fff;
     z-index: 99;
   }
   a {

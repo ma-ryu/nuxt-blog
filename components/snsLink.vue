@@ -47,7 +47,26 @@ ul {
   align-items: center;
   list-style: none;
   li {
-    padding-right: 8px;
+    padding: 4px;
+    margin: 4px;
+    background: #ddd;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: -10px -10px 15px rgb(245, 245, 245),
+      8px 8px 10px rgb(180, 180, 180);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    &:hover {
+      box-shadow: inset -8px -8px 15px rgb(240, 240, 240),
+        inset 8px 8px 15px rgb(190, 190, 190);
+      outline: none;
+    }
+    &:active {
+      box-shadow: inset 5px 5px 5px rgb(200, 200, 200),
+        inset -6px -6px 10px rgb(230, 230, 230);
+      outline: none;
+    }
     a {
       text-decoration: none;
       svg {

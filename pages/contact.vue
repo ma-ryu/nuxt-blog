@@ -1,8 +1,7 @@
 <template>
   <div>
     <div class="headline">
-      <h2>お問い合わせ</h2>
-      <p>CONTACT</p>
+      <h2>CONTACT</h2>
     </div>
     <contact-form />
   </div>
@@ -21,13 +20,8 @@ export default {
 .headline {
   margin-top: 70px;
   h2 {
-    font-size: 32px;
-    width: 250px;
-    margin: 0 auto;
-    border-bottom: 1px solid black;
-    border-width: 1.5px;
-    border-radius: 6px;
-    padding-bottom: 8px;
+    color: rgb(160, 160, 160);
+    text-shadow: 1px 1px 1px rgb(245, 245, 245);
   }
 }
 </style>
