@@ -8,14 +8,6 @@
     height="400"
   >
     <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
-      <template v-slot:placeholder>
-        <v-row class="fill-height ma-0" align="center" justify="center">
-          <v-progress-circular
-            indeterminate
-            color="grey lighten-5"
-          ></v-progress-circular>
-        </v-row>
-      </template>
       <v-row
         class="fill-height mx-0 text-md-h5 text-h6"
         align="center"
@@ -24,7 +16,7 @@
         justify-md="space-between"
       >
         <div
-          v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md"
+          v-show="$vuetify.breakpoint.lg || $vuetify.breakpoint.md"
           class="px-2"
         >
           {{ item.text }}
