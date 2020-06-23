@@ -51,6 +51,9 @@ export default {
   margin: 0 auto;
   padding: 8px;
   margin-top: 16px;
+  @media (max-width: (768px)) {
+    padding: 24px;
+  }
   .about-headline {
     text-align: left;
     display: flex;
@@ -74,8 +77,8 @@ export default {
     color: black;
     p {
       padding: 8px;
-      width: 200px;
-      background: #ddd;
+      margin: 0 auto;
+      width: 230px;
       border-radius: 25px;
       font-weight: bold;
       box-shadow: -10px -10px 15px rgb(245, 245, 245),
