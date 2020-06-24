@@ -1,7 +1,7 @@
 <template>
   <div class="pa-3">
-    <v-card flat class="grey lighten-3">
-      <v-card-title>カテゴリ一覧</v-card-title>
+    <v-card-title>カテゴリ一覧</v-card-title>
+    <div class="cat-wrapper">
       <div class="d-flex flex-wrap justify-start mb-3">
         <div v-for="(category, index) in categories" :key="index">
           <v-chip
@@ -10,14 +10,12 @@
             :color="categoryColor(category)"
             :to="linkTo('categories', category)"
             class="font-weight-bold text-subtitle-2 pa-5 ma-3"
-          >
-            {{ category.fields.name }}
-          </v-chip>
+          >{{ category.fields.name }}</v-chip>
         </div>
       </div>
-    </v-card>
-    <v-card  flat class="grey lighten-3">
-      <v-card-title>タグ一覧</v-card-title>
+    </div>
+    <v-card-title>タグ一覧</v-card-title>
+    <div class="cat-wrapper">
       <div class="d-flex flex-wrap justify-start mb-3">
         <div v-for="(tag, index) in tagList" :key="index" clss="d-flex">
           <v-chip
@@ -26,12 +24,10 @@
             :color="tagColor(tag)"
             :to="linkTo('tags', tag)"
             class="font-weight-bold text-subtitle-2 pa-5 ma-3"
-          >
-            {{ tag.fields.name }}
-          </v-chip>
+          >{{ tag.fields.name }}</v-chip>
         </div>
       </div>
-    </v-card>
+    </div>
   </div>
 </template>
 
@@ -73,4 +69,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.cat-wrapper {
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 25px;
+  box-shadow: inset 5px 5px 10px rgb(180, 180, 180),
+    inset -5px -5px 10px rgb(240, 240, 240);
+}
+</style>
