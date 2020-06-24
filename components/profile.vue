@@ -14,18 +14,21 @@
           ご覧いただき、ありがとうございます。Ma-ryuと申します。
           新潟県在住でWEB開発と趣味で写真の撮影を行なっています。
           WordPressを使った企業ホームページ・ブログの作成等を学習中です。
-          また、Vue.jsを使ったSPA・SSR開発やJavaScriptを使った個人アプリの
-          開発も行なっています。
-        </p>
-        <p class="mb-2">
-          ユーザーが使いやすいコンテンツ作成を目標に制作しています。
-          最近は、表示速度の高速化を目指しユーザーがストレスなく閲覧できるように、Vue.jsを使用した
-          WEB作成を学習中です。 このWEBサイトもNuxt.jsを利用して制作しています。
+          また、Vue.jsを使ったアプリ開発も行なっています。
+          このWEBサイトもNuxt.jsを利用して制作しています。
         </p>
       </div>
       <skill />
-      <nuxt-link class="contact-link" to="/contact">
-        <p>CONTACT</p>
+      <nuxt-link class="link text-left" to="/contact">
+        <p class="mb-8">
+          <v-icon class="mx-5">mdi-email</v-icon>
+          CONTACT
+        </p>
+      </nuxt-link>
+      <nuxt-link class="link text-left" to="/search">
+        <p>
+          <v-icon class="mx-5">mdi-magnify</v-icon>SITE SEARCH
+        </p>
       </nuxt-link>
     </div>
   </section>
@@ -61,7 +64,6 @@ export default {
   }
   .about-me {
     .content {
-      padding: 8px;
       p {
         padding: 16px;
         line-height: 2;
@@ -72,12 +74,13 @@ export default {
       }
     }
   }
-  .contact-link {
+  .link {
     text-decoration: none;
     color: black;
     p {
       padding: 8px;
       margin: 0 auto;
+      margin-bottom: 24px;
       width: 230px;
       border-radius: 25px;
       font-weight: bold;
