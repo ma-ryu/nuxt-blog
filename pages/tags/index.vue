@@ -12,9 +12,7 @@
               :color="tagColor(tag)"
               :to="linkTo('tags', tag)"
               class="font-weight-bold text-h6 pa-5 ma-3"
-            >
-              {{ tag.fields.name }}
-            </v-chip>
+            >{{ tag.fields.name }}</v-chip>
           </div>
         </div>
       </v-col>
@@ -28,9 +26,7 @@
               :color="categoryColor(category)"
               :to="linkTo('categories', category)"
               class="font-weight-bold text-h6 pa-5 ma-3"
-            >
-              {{ category.fields.name }}
-            </v-chip>
+            >{{ category.fields.name }}</v-chip>
           </div>
         </div>
       </v-col>
@@ -67,7 +63,7 @@ export default {
     ...mapState(['tagList']),
     ...mapGetters(['linkTo']),
     breadcrumbs() {
-      return [{ text: 'ホーム', to: '/' }]
+      return [{ text: 'ホーム', to: '/', icon: 'mdi-home' }]
     },
     categoryColor() {
       return (category) => {

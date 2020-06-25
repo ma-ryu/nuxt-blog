@@ -52,13 +52,13 @@ ul {
     background: #ddd;
     border-radius: 8px;
     font-weight: bold;
-    box-shadow: -10px -10px 15px rgb(245, 245, 245),
-      8px 8px 10px rgb(180, 180, 180);
+    box-shadow: -8px -8px 15px rgb(240, 255, 250),
+      8px 8px 15px rgb(180, 180, 180);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     font-weight: 600;
     &:hover {
-      box-shadow: inset -8px -8px 15px rgb(240, 240, 240),
+      box-shadow: inset -8px -8px 15px rgb(240, 255, 250),
         inset 8px 8px 15px rgb(190, 190, 190);
       outline: none;
     }
@@ -70,7 +70,8 @@ ul {
     a {
       text-decoration: none;
       svg {
-        color: black;
+        color: rgb(0, 0, 0);
+        filter: drop-shadow(.7px .7px 1px rgb(50, 255, 250));
       }
     }
   }

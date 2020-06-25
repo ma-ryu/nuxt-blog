@@ -32,7 +32,7 @@ export default {
   computed: {
     breadcrumbs() {
       return [
-        { text: 'ホーム', to: '/' },
+        { text: 'ホーム', to: '/', icon: 'mdi-home' },
         { text: 'POSTS', to: '/posts' }
       ]
     }

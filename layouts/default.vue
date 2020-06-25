@@ -29,11 +29,11 @@ body {
   margin: 0;
 }
 main {
-  background-color: #ddd;
+  background-color: rgb(230,230,230);
 }
 .main-wrapper {
   min-height: 600px;
-  background-color: #ddd;
+  background-color: rgb(230,230,230);
   text-align: center;
   padding: 8px;
   width: 1000px;

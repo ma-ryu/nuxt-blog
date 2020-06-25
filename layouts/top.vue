@@ -36,12 +36,12 @@ body {
   margin: 0;
 }
 main {
-  background-color: #ddd;
+  background-color:rgb(230,230,230);
 }
 .main-wrapper {
   margin: 0 auto;
   min-height: 600px;
-  background-color: #ddd;
+  background-color: rgb(230,230,230);
   text-align: center;
   max-width: 1200px;
   @media (max-width: (768px)) {

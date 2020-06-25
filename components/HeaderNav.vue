@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div
-      class="header__menu-line"
-      @click="navOpen"
-      :class="{ 'is-active': active }"
-    >
+    <div class="header__menu-line" @click="navOpen" :class="{ 'is-active': active }">
       <span></span>
       <span></span>
       <span></span>
@@ -121,7 +117,7 @@ export default {
     display: block;
     @media (max-width: (768px)) {
       display: none;
-      background-color: rgba(238, 238, 238, 0.98);
+      background-color: rgba(220, 220, 220, 0.98);
       z-index: 30;
       padding: 2rem 1rem;
       width: 100%;
@@ -142,14 +138,14 @@ export default {
         padding: 12px;
         margin-right: 16px;
         border-radius: 20px;
-        box-shadow: -8px -8px 15px rgb(245, 245, 245),
+        box-shadow: -8px -8px 15px rgb(240, 255, 250),
           8px 8px 15px rgb(180, 180, 180);
         transition: all 0.2s ease-in-out;
         cursor: pointer;
         font-weight: 600;
         &:hover {
-          box-shadow: -8px -8px 15px rgba(245, 245, 245, 0.6),
-            8px 8px 15px rgba(180, 180, 180, 0.6);
+          box-shadow: inset -5px -5px 10px rgb(240, 255, 250),
+            inset 5px 5px 10px rgb(200, 200, 200);
           outline: none;
         }
         &:active {
@@ -164,7 +160,8 @@ export default {
         }
         a {
           text-decoration: none;
-          color: #000;
+          text-shadow: 0.7px 0.7px 1px rgb(50, 255, 250);
+          color: black;
           font-size: 24px;
         }
       }
