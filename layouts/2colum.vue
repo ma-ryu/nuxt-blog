@@ -5,10 +5,7 @@
     <main>
       <v-row class="main-wrapper">
         <nuxt class="main" />
-        <sidebar
-          class="sidebar"
-          v-show="$vuetify.breakpoint.lg || $vuetify.breakpoint.md"
-        />
+        <sidebar class="sidebar" v-show="$vuetify.breakpoint.lg || $vuetify.breakpoint.md" />
       </v-row>
     </main>
     <Footer />
@@ -36,12 +33,12 @@ body {
   margin: 0;
 }
 main {
-  background-color:rgb(230,230,230);
+  background-color: rgb(230, 230, 230);
 }
 .main-wrapper {
   margin: 0 auto;
   min-height: 600px;
-  background-color: rgb(230,230,230);
+  background-color: rgb(230, 230, 230);
   text-align: center;
   max-width: 1200px;
   @media (max-width: (768px)) {

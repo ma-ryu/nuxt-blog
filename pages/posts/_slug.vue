@@ -3,18 +3,35 @@
     <breadcrumbs :items="breadcrumbs" />
     <div class="single">
       <h1 class="post-title">{{ post.fields.title }}</h1>
+      <div>
+        <v-chip
+          dark
+          :color="categoryColor(post.fields.category)"
+          class="text-subtitle-1 ma-3"
+        >{{ post.fields.category.fields.name }}</v-chip>
+      </div>
+      <v-row justify="center">
+        <div v-for="tag in post.fields.tag" :key="tag.sys.id">
+          <v-chip
+            dark
+            :color="tagColor(tag)"
+            :to="linkTo('tags', tag)"
+            label
+            class="ma-1 text-caption"
+          >{{ tag.fields.name }}</v-chip>
+        </div>
+      </v-row>
       <p class="post-created-at">{{ formatDate(post.sys.createdAt) }}</p>
-      <div
-        class="post-content line-numbers"
-        v-html="$md.render(post.fields.body)"
-      ></div>
+      <div class="post-content line-numbers" v-html="$md.render(post.fields.body)"></div>
     </div>
   </article>
 </template>
 
 <script>
 import Breadcrumbs from '~/components/breadcrumbs.vue'
+import { mapGetters } from 'vuex'
 export default {
+  layout: '2colum',
   components: {
     Breadcrumbs
   },
@@ -30,11 +47,38 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['linkTo']),
     breadcrumbs() {
       return [
         { text: 'ホーム', to: '/', icon: 'mdi-home' },
         { text: 'POSTS', to: '/posts' }
       ]
+    },
+    categoryColor() {
+      return (category) => {
+        switch (category.fields.name) {
+          case 'programming':
+            return 'rgb(0, 100, 40)'
+          case 'photography':
+            return 'rgb(0, 40, 150)'
+          default:
+            return 'grey darken-3'
+        }
+      }
+    },
+    tagColor() {
+      return (tag) => {
+        switch (tag.fields.name) {
+          case 'nuxt.js':
+            return '#3FB983'
+          case 'contentful':
+            return '#62B6E1'
+          case 'netlify':
+            return '#25C7B7'
+          default:
+            return 'grey darken-3'
+        }
+      }
     }
   },
   mounted() {
@@ -100,10 +144,11 @@ article.article {
   .single {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 16px;
     color: #222;
-    border: 1.5px solid rgba(0, 0, 0, 0.8);
-    border-radius: 5px;
+    background-color: rgb(250, 250, 250);
+    border: .5px solid rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
     h1,
     h2,
     h3 {
@@ -113,7 +158,6 @@ article.article {
       font-size: 32px;
       word-break: keep-all;
       word-wrap: break-word;
-      text-decoration: underline;
       @media (max-width: (768px)) {
         font-size: 24px;
       }
@@ -126,17 +170,32 @@ article.article {
       padding: 8px;
       h1 {
         font-size: 32px;
-        padding: 4px;
+        padding: 8px;
+        padding-left: 16px;
+        font-weight: bold;
         @media (max-width: (768px)) {
           font-size: 24px;
         }
       }
       h2 {
         font-size: 24px;
-        padding: 4px;
-        background: #ccc;
+        padding: 6px;
+        padding-left: 16px;
+        font-weight: bold;
+        background: rgb(230, 230, 230);
+        border-left: 5px solid black;
         @media (max-width: (768px)) {
           font-size: 16px;
+        }
+      }
+      h3 {
+        font-size: 18px;
+        padding: 6px;
+        padding-left: 16px;
+        font-weight: bold;
+        border-left: 5px solid black;
+        @media (max-width: (768px)) {
+          font-size: 14px;
         }
       }
       p {
@@ -155,6 +214,10 @@ article.article {
       }
       ul {
         padding-left: 24px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        background-color: rgba(230, 230, 230, 0.8);
+        border: 1px dashed rgb(150, 150, 150);
         li {
           display: flex;
           font-size: 16px;

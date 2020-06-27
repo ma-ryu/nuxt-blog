@@ -4,15 +4,15 @@
       <input type="hidden" name="form-name" value="contact" />
       <label for="name">
         <font-awesome-icon :icon="['fas', 'user']" />
-        <input name="name" type="text" required />
+        <input name="name" type="text" placeholder=" Your Name..." required />
       </label>
       <label for="email">
         <font-awesome-icon :icon="['fas', 'envelope']" />
-        <input name="email" type="text" required />
+        <input name="email" type="text" placeholder=" Your E-mail..." required />
       </label>
       <label for="textarea">
         <font-awesome-icon :icon="['fas', 'comment']" />
-        <textarea name="textarea" cols="30" rows="10"></textarea>
+        <textarea name="textarea" cols="30" rows="10" placeholder=" Your message..."></textarea>
       </label>
       <button value="Send" type="submit">
         Send
