@@ -42,5 +42,8 @@ export default {
     box-shadow: -8px -8px 15px rgb(245, 245, 245),
       8px 8px 15px rgb(180, 180, 180);
   }
+  i {
+    filter: drop-shadow(0.7px 0.7px 1px rgb(50, 255, 250));
+  }
 }
 </style>

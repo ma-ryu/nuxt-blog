@@ -25,7 +25,7 @@ import Headline from '~/components/headline.vue'
 import Carousel from '~/components/carousel.vue'
 
 export default {
-  layout: 'top',
+  layout: '2colum',
   components: {
     Post,
     Profile,

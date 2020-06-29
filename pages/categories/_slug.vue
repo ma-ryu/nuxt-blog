@@ -28,7 +28,7 @@ export default {
     },
     breadcrumbs() {
       return [
-        { text: 'ホーム', to: '/' },
+        { text: 'ホーム', to: '/', icon: 'mdi-home' },
         { text: 'CATEGORY', to: '/categories' }
       ]
     }

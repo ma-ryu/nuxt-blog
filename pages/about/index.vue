@@ -33,7 +33,7 @@ export default {
     ...mapState(['about']),
     ...mapGetters(['linkTo']),
     breadcrumbs() {
-      return [{ text: 'ホーム', to: '/' }]
+      return [{ text: 'ホーム', to: '/', icon: 'mdi-home' }]
     }
   },
   head: {

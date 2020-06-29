@@ -19,17 +19,6 @@
         </p>
       </div>
       <skill />
-      <nuxt-link class="link text-left" to="/contact">
-        <p class="mb-8">
-          <v-icon class="mx-5">mdi-email</v-icon>
-          CONTACT
-        </p>
-      </nuxt-link>
-      <nuxt-link class="link text-left" to="/search">
-        <p>
-          <v-icon class="mx-5">mdi-magnify</v-icon>SITE SEARCH
-        </p>
-      </nuxt-link>
     </div>
   </section>
 </template>
@@ -70,33 +59,7 @@ export default {
         font-size: 12px;
         border-radius: 25px;
         box-shadow: inset 5px 5px 10px rgb(180, 180, 180),
-          inset -5px -5px 10px rgb(240, 240, 240);
-      }
-    }
-  }
-  .link {
-    text-decoration: none;
-    color: black;
-    p {
-      padding: 8px;
-      margin: 0 auto;
-      margin-bottom: 24px;
-      width: 230px;
-      border-radius: 25px;
-      font-weight: bold;
-      box-shadow: -10px -10px 15px rgb(245, 245, 245),
-        8px 8px 10px rgb(180, 180, 180);
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-      font-weight: 600;
-      &:hover {
-        box-shadow: -8px -8px 15px rgba(245, 245, 245, 0.6),
-          8px 8px 15px rgba(180, 180, 180, 0.6);
-      }
-      &:active {
-        box-shadow: inset 5px 5px 5px rgb(180, 180, 180),
-          inset -6px -6px 10px rgb(245, 245, 245);
-        outline: none;
+          inset -5px -5px 10px rgb(240, 255, 250);
       }
     }
   }

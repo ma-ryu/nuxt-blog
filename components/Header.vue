@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .header-inner {
-  background-color:#ddd;
+  background-color:rgb(230,230,230);
   display: flex;
   height: 100px;
   justify-content: space-between;

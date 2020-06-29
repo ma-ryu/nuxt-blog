@@ -4,15 +4,15 @@
       <input type="hidden" name="form-name" value="contact" />
       <label for="name">
         <font-awesome-icon :icon="['fas', 'user']" />
-        <input name="name" type="text" required />
+        <input name="name" type="text" placeholder=" Your Name..." required />
       </label>
       <label for="email">
         <font-awesome-icon :icon="['fas', 'envelope']" />
-        <input name="email" type="text" required />
+        <input name="email" type="text" placeholder=" Your E-mail..." required />
       </label>
       <label for="textarea">
         <font-awesome-icon :icon="['fas', 'comment']" />
-        <textarea name="textarea" cols="30" rows="10"></textarea>
+        <textarea name="textarea" cols="30" rows="10" placeholder=" Your message..."></textarea>
       </label>
       <button value="Send" type="submit">
         Send
@@ -46,7 +46,7 @@ export default {}
       appearance: none;
       -webkit-appearance: none;
       &:hover {
-        box-shadow: -8px -8px 15px rgb(245, 245, 245),
+        box-shadow: -8px -8px 15px rgb(240, 255, 250),
           8px 8px 15px rgb(180, 180, 180);
       }
       input {
@@ -79,25 +79,30 @@ export default {}
     }
 
     button {
+      margin-top: 16px;
       padding: 8px;
       width: 200px;
-      background: #ddd;
+      background: rgb(230, 230, 230);
       border-radius: 25px;
       font-weight: bold;
-      box-shadow: -8px -8px 15px rgb(245, 245, 245),
+      box-shadow: -8px -8px 15px rgb(240, 255, 250),
         8px 8px 15px rgb(180, 180, 180);
       transition: all 0.2s ease-in-out;
       cursor: pointer;
       font-weight: 600;
+      text-shadow: 0.7px 0.7px 1px rgb(50, 255, 250);
       &:hover {
-        box-shadow: -8px -8px 15px rgba(245, 245, 245,0.6),
-          8px 8px 15px rgba(180, 180, 180,0.6);
+        box-shadow: inset -5px -5px 10px rgb(240, 255, 250),
+          inset 5px 5px 10px rgb(200, 200, 200);
         outline: none;
       }
       &:active {
         box-shadow: inset 6px 6px 5px rgb(180, 180, 180),
           inset -6px -6px 10px rgb(245, 245, 245);
         outline: none;
+      }
+      svg {
+        filter: drop-shadow(0.7px 0.7px 1px rgb(50, 255, 250));
       }
     }
   }

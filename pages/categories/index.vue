@@ -67,7 +67,7 @@ export default {
     ...mapState(['tagList']),
     ...mapGetters(['linkTo']),
     breadcrumbs() {
-      return [{ text: 'ホーム', to: '/' }]
+      return [{ text: 'ホーム', to: '/', icon: 'mdi-home' }]
     },
     categoryColor() {
       return (category) => {

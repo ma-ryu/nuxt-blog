@@ -76,6 +76,6 @@ export default {
   padding-bottom: 8px;
   border-radius: 25px;
   box-shadow: inset 5px 5px 10px rgb(180, 180, 180),
-    inset -5px -5px 10px rgb(240, 240, 240);
+    inset -5px -5px 10px rgb(240, 255, 250);
 }
 </style>
