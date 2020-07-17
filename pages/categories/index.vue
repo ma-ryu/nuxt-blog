@@ -13,7 +13,8 @@
               :to="linkTo('categories', category)"
               class="font-weight-bold text-h6 pa-5 ma-3"
             >
-              {{ category.fields.name }}
+            {{ category.fields.name }}
+            {{ postCount(category) }}
             </v-chip>
           </div>
         </div>
@@ -29,7 +30,7 @@
               :to="linkTo('tags', tag)"
               class="font-weight-bold text-h6 pa-5 ma-3"
             >
-              {{ tag.fields.name }}
+            {{ tag.fields.name }}
             </v-chip>
           </div>
         </div>
@@ -94,8 +95,13 @@ export default {
             return 'grey darken-3'
         }
       }
-    }
-  }
+    },
+    postCount() {
+      return (v) => {
+        return this.$store.getters.relatedPosts(v).length
+      }
+    },
+  },
 }
 </script>
 

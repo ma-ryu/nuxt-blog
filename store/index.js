@@ -16,14 +16,14 @@ export const getters = {
       }
     }
   },
-  relatedPosts: state => (category) => {
+  relatedPosts: state => (v) => {
     const posts = []
     for (let i = 0; i < state.posts.length; i++) {
       const catId = state.posts[i].fields.category.sys.id
-      if (category.sys.id === catId) posts.push(state.posts[i])
+      if (v.sys.id === catId) posts.push(state.posts[i])
     }
     return posts
-  }
+  },
 }
 
 export const mutations = {
