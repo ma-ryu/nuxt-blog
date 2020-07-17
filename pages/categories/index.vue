@@ -31,6 +31,7 @@
               class="font-weight-bold text-h6 pa-5 ma-3"
             >
             {{ tag.fields.name }}
+            {{ tagPostCount(tag) }}
             </v-chip>
           </div>
         </div>
@@ -101,6 +102,11 @@ export default {
         return this.$store.getters.relatedPosts(v).length
       }
     },
+    tagPostCount() {
+      return (v) => {
+        return this.$store.getters.tagRelatedPosts(v).length
+      }
+    }
   },
 }
 </script>
