@@ -2,15 +2,18 @@
   <article class="article">
     <breadcrumbs :items="breadcrumbs" />
     <div class="single">
-      <h1 class="post-title">{{ post.fields.title }}</h1>
-      <div>
+      <div class="text-left">
+        カテゴリ:
         <v-chip
           dark
           :color="categoryColor(post.fields.category)"
-          class="text-subtitle-1 ma-3"
-        >{{ post.fields.category.fields.name }}</v-chip>
+          class="text-caption ma-1"
+        >
+          {{ post.fields.category.fields.name }}
+        </v-chip>
       </div>
-      <v-row justify="center">
+      <h1 class="post-title">{{ post.fields.title }}</h1>
+      <v-row justify="center" align="center">
         <div v-for="tag in post.fields.tag" :key="tag.sys.id">
           <v-chip
             dark
@@ -152,11 +155,12 @@ article.article {
     h1,
     h2,
     h3 {
-      margin: 16px 0;
+      margin: 8px 0;
     }
     h1.post-title {
+      display: inline-block;
+      text-align: left;
       font-size: 32px;
-      word-break: keep-all;
       word-wrap: break-word;
       @media (max-width: (768px)) {
         font-size: 24px;
