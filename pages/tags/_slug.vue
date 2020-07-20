@@ -49,7 +49,7 @@ export default {
     breadcrumbs() {
       return [
         { text: 'ホーム', to: '/', icon: 'mdi-home' },
-        { text: 'CATEGORY', to: '/categories' }
+        { text: 'tags', to: '/categories' }
       ]
     }
   }
