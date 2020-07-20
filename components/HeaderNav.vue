@@ -12,6 +12,9 @@
             <nuxt-link to="/">HOME</nuxt-link>
           </li>
           <li @click="navOpen">
+          <nuxt-link to="/search">SEARCH</nuxt-link>
+        </li>
+          <li @click="navOpen">
             <nuxt-link to="/posts">BLOG</nuxt-link>
           </li>
           <li @click="navOpen">

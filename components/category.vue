@@ -2,28 +2,28 @@
   <div class="pa-3">
     <v-card-title>カテゴリ一覧</v-card-title>
     <div class="cat-wrapper">
-      <div class="d-flex flex-wrap justify-start mb-3">
+      <div class="d-flex flex-wrap justify-start mb-3 pa-2">
         <div v-for="(category, index) in categories" :key="index">
           <v-chip
             small
             dark
             :color="categoryColor(category)"
             :to="linkTo('categories', category)"
-            class="font-weight-bold text-subtitle-2 pa-5 ma-3"
+            class="font-weight-bold text-subtitle-2 pa-4 ma-2"
           >{{ category.fields.name }}</v-chip>
         </div>
       </div>
     </div>
     <v-card-title>タグ一覧</v-card-title>
     <div class="cat-wrapper">
-      <div class="d-flex flex-wrap justify-start mb-3">
+      <div class="d-flex flex-wrap justify-start mb-3 pa-2">
         <div v-for="(tag, index) in tagList" :key="index" clss="d-flex">
           <v-chip
             small
             dark
             :color="tagColor(tag)"
             :to="linkTo('tags', tag)"
-            class="font-weight-bold text-subtitle-2 pa-5 ma-3"
+            class="font-weight-bold text-subtitle-2 pa-4 ma-2"
           >{{ tag.fields.name }}</v-chip>
         </div>
       </div>

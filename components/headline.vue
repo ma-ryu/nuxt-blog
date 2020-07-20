@@ -24,8 +24,10 @@ export default {
   h2 {
     font-size: 32px;
     margin: 0 auto;
-    border: 1px solid black;
-    border-radius: 8px;
+    color: rgb(120, 120, 120);
+    text-shadow: 1px 1px 1px rgb(250, 250, 250);
+    border-radius: 25px;
+    border: dotted 1px black;
     @media (max-width: (768px)) {
       font-size: 28px;
     }
