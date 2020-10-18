@@ -1,6 +1,6 @@
 <template>
-  <v-col cols="md-6">
-    <v-card height="100%">
+  <v-col cols="md-6" class="pa-5">
+    <v-card height="100%" flat>
       <v-img
         v-if="post.fields.image"
         height="200px"

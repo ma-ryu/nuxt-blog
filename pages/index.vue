@@ -38,7 +38,7 @@ export default {
     headline() {
       return {
         jp: '最新情報',
-        eng: 'NEW POST',
+        eng: 'POST',
         icon: 'mdi-lead-pencil'
       }
     },
@@ -73,6 +73,6 @@ export default {
 }
 
 section.latest-posts {
-  padding: 16px;
+  padding: 8px;
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div class="headline">
     <h2 class="px-0 py-2 mb-3">
-      <v-icon class="mb-1" v-if="headline.icon">{{ headline.icon }}</v-icon>
       {{ headline.eng }}
     </h2>
   </div>
@@ -27,7 +26,6 @@ export default {
     color: rgb(120, 120, 120);
     text-shadow: 1px 1px 1px rgb(250, 250, 250);
     border-radius: 25px;
-    border: dotted 1px black;
     @media (max-width: (768px)) {
       font-size: 28px;
     }
