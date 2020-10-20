@@ -33,11 +33,11 @@ export default {
     return {
       cycle: true,
       items: [
+        { text: '新潟の夜空', src: require('../assets/img/star.jpg') },
         { text: '新潟の秋空', src: require('../assets/img/emo-cloud.jpg') },
-        { text: '新潟の新緑', src: require('../assets/img/sinryoku-2.jpg') },
         { text: '佐渡の浜辺', src: require('../assets/img/sado-sea.jpg') },
         { text: '新潟の稲穂', src: require('../assets/img/inaho.jpg') },
-        { text: '新潟の新緑', src: require('../assets/img/sinryoku.jpg') }
+        { text: '新潟の新緑', src: require('../assets/img/sinryoku-2.jpg') }
       ]
     }
   }

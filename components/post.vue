@@ -24,8 +24,7 @@
         <div class="d-flex flex-wrap justify-start mb-3">
           <div v-for="tag in post.fields.tag" :key="tag.sys.id">
             <v-chip
-              dark
-              :color="tagColor(tag)"
+              color="blue-grey lighten-4"
               :to="linkTo('tags', tag)"
               label
               class="ma-1"
@@ -72,20 +71,6 @@ export default {
         }
       }
     },
-    tagColor() {
-      return (tag) => {
-        switch (tag.fields.name) {
-          case 'nuxt.js':
-            return '#3FB983'
-          case 'contentful':
-            return '#62B6E1'
-          case 'netlify':
-            return '#25C7B7'
-          default:
-            return 'grey darken-3'
-        }
-      }
-    }
   },
   props: ['post'],
   methods: {

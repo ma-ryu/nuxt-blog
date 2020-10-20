@@ -25,8 +25,7 @@
           <div v-for="(tag, index) in tagList" :key="index" clss="d-flex">
             <v-chip
               small
-              dark
-              :color="tagColor(tag)"
+              color="blue-grey lighten-4"
               :to="linkTo('tags', tag)"
               class="font-weight-bold text-h6 pa-5 ma-3"
             >
@@ -78,20 +77,6 @@ export default {
             return 'rgb(0, 100, 40)'
           case 'photography':
             return 'rgb(0, 40, 150)'
-          default:
-            return 'grey darken-3'
-        }
-      }
-    },
-    tagColor() {
-      return (tag) => {
-        switch (tag.fields.name) {
-          case 'nuxt.js':
-            return '#3FB983'
-          case 'contentful':
-            return '#62B6E1'
-          case 'netlify':
-            return '#25C7B7'
           default:
             return 'grey darken-3'
         }
