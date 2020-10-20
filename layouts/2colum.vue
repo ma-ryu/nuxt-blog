@@ -28,6 +28,7 @@ export default {
   font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN',
     'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック',
     'MS PGothic', sans-serif;
+    font-display: swap;
 }
 body {
   margin: 0;
