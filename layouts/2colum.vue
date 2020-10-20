@@ -25,9 +25,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 * {
-  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN',
-    'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック',
-    'MS PGothic', sans-serif;
+  font-family: 'lato', 'Noto Sans JP', 'ＭＳ Ｐゴシック',
+    sans-serif;
     font-display: swap;
 }
 body {
