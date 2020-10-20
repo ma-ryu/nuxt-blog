@@ -132,11 +132,12 @@ article.article {
   .single {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 16px;
+    margin-top: 16px;
+    padding: 24px;
     color: #222;
-    background-color: rgb(250, 250, 250);
-    border: .5px solid rgba(0, 0, 0, 0.8);
-    border-radius: 4px;
+    border-radius: 25px;
+    box-shadow: inset 5px 5px 10px rgb(180, 180, 180),
+      inset -5px -5px 10px rgb(240, 255, 250);
     h1,
     h2,
     h3 {
@@ -171,7 +172,7 @@ article.article {
         padding: 6px;
         padding-left: 16px;
         font-weight: bold;
-        background: rgb(230, 230, 230);
+        background: rgb(210, 210, 210);
         border-left: 5px solid black;
         @media (max-width: (768px)) {
           font-size: 16px;
