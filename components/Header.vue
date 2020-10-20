@@ -28,6 +28,7 @@ export default {
   height: 100px;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   @media (max-width: (768px)) {
     height: 65px;
     position: fixed;
@@ -41,7 +42,6 @@ export default {
   .header-title {
     display: flex;
     font-size: 32px;
-    margin-left: 8px;
     padding: 16px;
     h1 {
       font-weight: lighter;

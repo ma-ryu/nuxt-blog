@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="md-6" class="pa-5">
+  <v-col cols="12" md="6" class="pa-3">
     <v-card height="100%" flat>
       <v-img
         v-if="post.fields.image"

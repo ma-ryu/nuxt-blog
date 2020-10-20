@@ -8,7 +8,7 @@
     <profile v-show="$vuetify.breakpoint.xs" />
     <section class="latest-posts">
       <headline :headline="headline" />
-      <v-row>
+      <v-row no-gutters>
         <post v-for="(post, index) in posts" :key="index" :post="post" />
       </v-row>
     </section>
