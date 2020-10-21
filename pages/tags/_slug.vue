@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     headline() {
-      return { jp: '', eng: this.tag.fields.name }
+      return { eng: this.tag.fields.name }
     },
     breadcrumbs() {
       return [

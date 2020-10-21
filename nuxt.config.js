@@ -131,7 +131,7 @@ export default {
       ]).then(([posts, about, category, tag]) => {
         return [
           ...posts.items.map((post) => `posts/${post.fields.slug}`),
-          ...about.items.map((about) => `abouts/${about.fields.slug}`),
+          ...about.items.map((about) => `about/${about.fields.slug}`),
           ...category.items.map((category) => `categories/${category.fields.slug}`),
           ...tag.items.map((tag) => `tags/${tag.fields.slug}`),
         ]

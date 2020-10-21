@@ -28,9 +28,7 @@ export default {
     },
     headline() {
       return {
-        jp: '最新情報',
-        eng: 'NEW POST',
-        icon: 'mdi-lead-pencil'
+        eng: 'POST',
       }
     }
   },

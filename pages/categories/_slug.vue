@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     catHeadline() {
-      return { jp: '', eng: this.category.fields.name.toUpperCase() }
+      return { eng: this.category.fields.slug.toUpperCase() }
     },
     relatedPosts() {
       return this.$store.getters.relatedPosts(this.category)
