@@ -1,7 +1,7 @@
 <template>
   <div class="mb-5">
     <div class="d-flex mt-3 mb-3">
-      <font-awesome-icon class="mr-2" icon="code" size="lg" />
+      <v-icon color="black" large class="mr-2">mdi-cube-outline</v-icon>
       <h5 class="text-h6">My Skills</h5>
     </div>
     <v-treeview
@@ -43,7 +43,10 @@ export default {
                 { id: 9, name: 'Nuxt.js' }
               ]
             },
-            { id: 10, name: 'TypeScript : 学習中' }
+            {
+              id: 10,
+              name: 'React.js',
+            },
           ]
         }
       ]

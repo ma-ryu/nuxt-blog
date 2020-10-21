@@ -88,7 +88,7 @@ export default {
   },
   webfontloader: {
     google: {
-      families: ['Josefin+Sans','Noto Sans JP']
+      families: ['Noto Sans JP']
     }
   },
   sitemap: {

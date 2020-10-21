@@ -6,7 +6,7 @@
     </div>
     <div class="about-me">
       <div class="d-flex mt-3 mb-3">
-        <font-awesome-icon class="mr-2" icon="user" size="lg" />
+        <v-icon color="black" large class="mr-2">mdi-account</v-icon>
         <h5 class="text-h6">About Me</h5>
       </div>
       <div class="content text-left">

@@ -42,7 +42,6 @@
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.1.0",
-    "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-config-standard": "^14.1.1",
@@ -52,7 +51,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "eslint-plugin-vue": "^7.0.0-alpha.6",
+    "eslint-plugin-vue": "^7.1.0",
     "jest": "^24.1.0",
     "prettier": "^1.19.1",
     "vue-jest": "^4.0.0-beta.3"
