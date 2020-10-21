@@ -126,7 +126,7 @@ export default {
           content_type: 'category'
         }),
         client.getEntries({
-          content_type: 'tags'
+          content_type: 'tag'
         }),
       ]).then(([posts, about, category, tag]) => {
         return [
