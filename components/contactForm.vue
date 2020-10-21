@@ -16,7 +16,7 @@
       </label>
       <button value="Send" type="submit">
         Send
-        <font-awesome-icon :icon="['fas', 'paper-plane']" />
+        <v-icon color="black">mdi-send</v-icon>
       </button>
     </form>
   </div>

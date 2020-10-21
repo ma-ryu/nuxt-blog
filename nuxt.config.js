@@ -79,10 +79,7 @@ export default {
     typography: true
   },
   fontawesome: {
-    imports: [{
-        set: '@fortawesome/free-solid-svg-icons',
-        icons: ['fas']
-      },
+    imports: [
       {
         set: '@fortawesome/free-brands-svg-icons',
         icons: ['fab']
