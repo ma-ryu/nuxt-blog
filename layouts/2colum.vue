@@ -25,9 +25,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 * {
+  font-display: swap;
   font-family: 'lato', 'Noto Sans JP', 'ＭＳ Ｐゴシック',
     sans-serif;
-    font-display: swap;
 }
 body {
   margin: 0;

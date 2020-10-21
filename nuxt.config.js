@@ -66,7 +66,8 @@ export default {
     'nuxt-fontawesome',
     '@nuxtjs/sitemap',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    'nuxt-webfontloader'
   ],
   googleAnalytics: {
     id: process.env.GA_ID
@@ -88,6 +89,11 @@ export default {
         icons: ['fab']
       }
     ]
+  },
+  webfontloader: {
+    google: {
+      families: ['Josefin+Sans','Noto Sans JP']
+    }
   },
   sitemap: {
     hostname: 'https://ma-ryu-portfolio.netlify.app',
