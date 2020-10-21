@@ -1,13 +1,13 @@
 <template>
-  <v-breadcrumbs :items="items" large class="pt-2 px-2">
+  <v-breadcrumbs :items="items" class="pt-2 px-2">
     <template v-slot:divider>
       <v-icon>mdi-chevron-right</v-icon>
     </template>
     <template v-slot:item="{ item }">
       <v-breadcrumbs-item v-if="item.icon" :to="item.to" exact>
-        <v-icon large>{{item.icon}}</v-icon>
+        <v-icon size="28px">{{item.icon}}</v-icon>
       </v-breadcrumbs-item>
-      <v-breadcrumbs-item v-else :to="item.to" exact class="text-h5">{{ item.text }}</v-breadcrumbs-item>
+      <v-breadcrumbs-item v-else :to="item.to" exact class="text-h6">{{ item.text }}</v-breadcrumbs-item>
     </template>
   </v-breadcrumbs>
 </template>

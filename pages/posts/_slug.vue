@@ -149,7 +149,7 @@ article.article {
       font-size: 32px;
       word-wrap: break-word;
       @media (max-width: (768px)) {
-        font-size: 24px;
+        font-size: 22px;
       }
     }
     p.post-created-at {
@@ -183,6 +183,7 @@ article.article {
         padding: 6px;
         padding-left: 16px;
         font-weight: bold;
+        background: rgb(210, 210, 210);
         border-left: 5px solid black;
         @media (max-width: (768px)) {
           font-size: 14px;
@@ -200,16 +201,15 @@ article.article {
       }
       img {
         max-width: 100%;
+        max-height: 450px;
         border: 1px solid #000;
       }
       ul {
         padding-left: 24px;
         padding-top: 16px;
         padding-bottom: 16px;
-        background-color: rgba(230, 230, 230, 0.8);
         border: 1px dashed rgb(150, 150, 150);
         li {
-          display: flex;
           font-size: 16px;
           @media (max-width: (768px)) {
             font-size: 8px;

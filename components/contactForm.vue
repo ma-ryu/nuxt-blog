@@ -3,15 +3,15 @@
     <form name="contact" method="POST" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
       <label for="name">
-        <font-awesome-icon :icon="['fas', 'user']" />
+        <v-icon color="black" class="mx-2">mdi-account</v-icon>
         <input name="name" type="text" placeholder=" Your Name..." required />
       </label>
       <label for="email">
-        <font-awesome-icon :icon="['fas', 'envelope']" />
-        <input name="email" type="text" placeholder=" Your E-mail..." required />
+        <v-icon color="black" class="mx-2">mdi-email</v-icon>
+        <input name="email" type="text" placeholder=" abc@gmail.com" required />
       </label>
       <label for="textarea">
-        <font-awesome-icon :icon="['fas', 'comment']" />
+        <v-icon color="black" class="mx-2 mt-2 d-flex align-start">mdi-comment</v-icon>
         <textarea name="textarea" cols="30" rows="10" placeholder=" Your message..."></textarea>
       </label>
       <button value="Send" type="submit">
@@ -32,11 +32,14 @@ export default {}
   margin-top: 16px;
   display: flex;
   justify-content: center;
+  position: relative;
+  padding: 24px;
   form {
     label {
       display: flex;
+      margin: 0 auto;
       margin-bottom: 16px;
-      padding: 0.5px;
+      padding: 1px;
       border-radius: 25px;
       box-shadow: inset 6px 6px 5px rgb(180, 180, 180),
         inset -6px -6px 10px rgb(245, 245, 245);
@@ -45,6 +48,9 @@ export default {}
       transition: all 0.2s ease-in-out;
       appearance: none;
       -webkit-appearance: none;
+      @media (max-width: (768px)) {
+          width: 90%;
+        }
       &:hover {
         box-shadow: -8px -8px 15px rgb(240, 255, 250),
           8px 8px 15px rgb(180, 180, 180);
@@ -72,10 +78,6 @@ export default {}
           width: 300px;
         }
       }
-      svg {
-        font-size: 16px;
-        margin: 8px;
-      }
     }
 
     button {
@@ -100,9 +102,6 @@ export default {}
         box-shadow: inset 6px 6px 5px rgb(180, 180, 180),
           inset -6px -6px 10px rgb(245, 245, 245);
         outline: none;
-      }
-      svg {
-        filter: drop-shadow(0.7px 0.7px 1px rgb(50, 255, 250));
       }
     }
   }
