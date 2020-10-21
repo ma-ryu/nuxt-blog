@@ -37,10 +37,6 @@ export default {
         type: 'image/x-icon',
         href: '/favicon.ico'
       },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700'
-      }
     ]
   },
   /*
