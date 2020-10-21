@@ -19,6 +19,9 @@ export default {
   head: {
     title: 'Ma-ryu' || '',
     titleTemplate: '%s - Ma-ryu',
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [{
         charset: 'utf-8'
       },

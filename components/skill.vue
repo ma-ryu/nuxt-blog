@@ -2,7 +2,7 @@
   <div class="mb-5">
     <div class="d-flex mt-3 mb-3">
       <v-icon color="black" large class="mr-2">mdi-cube-outline</v-icon>
-      <h5 class="text-h6">My Skills</h5>
+      <h3 class="text-h6">My Skills</h3>
     </div>
     <v-treeview
       class="text-left caption"

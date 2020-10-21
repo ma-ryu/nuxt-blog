@@ -7,7 +7,7 @@
     <div class="about-me">
       <div class="d-flex mt-3 mb-3">
         <v-icon color="black" large class="mr-2">mdi-account</v-icon>
-        <h5 class="text-h6">About Me</h5>
+        <h3 class="text-h6">About Me</h3>
       </div>
       <div class="content text-left">
         <p class="mb-2">
