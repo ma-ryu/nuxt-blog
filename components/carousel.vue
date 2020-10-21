@@ -5,24 +5,34 @@
     :show-arrows="false"
     hide-delimiter-background
     delimiter-icon="mdi-minus"
-    height="400"
+    height="auto"
+    
   >
-    <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src">
-      <v-row
-        class="fill-height mx-0 text-md-h5 text-h6"
-        align="center"
-        justify="center"
-        align-md="end"
-        justify-md="space-between"
-      >
-        <div
-          v-show="$vuetify.breakpoint.lg || $vuetify.breakpoint.md"
-          class="px-2"
+    <v-carousel-item v-for="(item, i) in items" :key="i" contain>
+      <v-img :src="item.src" lazy-src="https://dummyimage.com/1000x500/ccc/999.png&text=Loading" height="100%">
+        <template v-slot:placeholder>
+          <v-row justify="center" align-content="center" class="fill-height">
+              <v-progress-circular
+                indeterminate
+              ></v-progress-circular>
+          </v-row>
+        </template>
+        <v-row
+          class="fill-height mx-0 text-md-h5 text-h6"
+          align="center"
+          justify="center"
+          align-md="end"
+          justify-md="space-between"
         >
-          {{ item.text }}
-        </div>
-        <div class="black pa-1">Photo by: Ma-ryu</div>
-      </v-row>
+          <div
+            v-show="$vuetify.breakpoint.lg || $vuetify.breakpoint.md"
+            class="px-2"
+          >
+            {{ item.text }}
+          </div>
+          <div class="black pa-1">Photo by: Ma-ryu</div>
+        </v-row>
+      </v-img>
     </v-carousel-item>
   </v-carousel>
 </template>
@@ -40,6 +50,11 @@ export default {
         { text: '新潟の新緑', src: require('../assets/img/sinryoku-2.jpg') }
       ]
     }
+  },
+  methods: {
+    imgLoaded() {
+      this,isLoading = false
+    },
   }
 }
 </script>
