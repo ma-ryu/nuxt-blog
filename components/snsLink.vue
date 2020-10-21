@@ -1,17 +1,17 @@
 <template>
   <ul>
     <li>
-      <a :href="sns.github.url" target="_blank">
+      <a :href="sns.github.url" target="_blank" aria-label="githubアカウントを開きます。">
         <font-awesome-icon :icon="sns.github.icon" size="lg" />
       </a>
     </li>
     <li>
-      <a :href="sns.twitter.url" target="_blank">
+      <a :href="sns.twitter.url" target="_blank" aria-label="twitterアカウントを開きます。">
         <font-awesome-icon :icon="sns.twitter.icon" size="lg" />
       </a>
     </li>
     <li>
-      <a :href="sns.instagram.url" target="_blank">
+      <a :href="sns.instagram.url" target="_blank" aria-label="instagramアカウントを開きます。">
         <font-awesome-icon :icon="sns.instagram.icon" size="lg" />
       </a>
     </li>

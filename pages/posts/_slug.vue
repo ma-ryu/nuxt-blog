@@ -111,7 +111,7 @@ export default {
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.post.fields.description
+          content: this.post.fields.desc
         },
         {
           hid: 'og:image',
