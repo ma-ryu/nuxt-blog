@@ -122,18 +122,10 @@ export default {
         client.getEntries({
           content_type: 'about'
         }),
-        client.getEntries({
-          content_type: 'category'
-        }),
-        client.getEntries({
-          content_type: 'tag'
-        }),
-      ]).then(([posts, about, category, tag]) => {
+      ]).then(([posts, about]) => {
         return [
           ...posts.items.map((post) => `posts/${post.fields.slug}`),
           ...about.items.map((about) => `about/${about.fields.slug}`),
-          ...category.items.map((category) => `categories/${category.fields.slug}`),
-          ...tag.items.map((tag) => `tags/${tag.fields.slug}`),
         ]
       })
     }

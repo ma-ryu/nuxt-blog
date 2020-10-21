@@ -37,9 +37,7 @@ export default {
     ...mapState(['posts']),
     headline() {
       return {
-        jp: '最新情報',
         eng: 'POST',
-        icon: 'mdi-lead-pencil'
       }
     },
     isPc() {
