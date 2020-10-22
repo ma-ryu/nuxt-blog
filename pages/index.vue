@@ -6,7 +6,7 @@
       </div>
     </section>
     <profile v-show="$vuetify.breakpoint.xs" />
-    <section class="latest-posts">
+    <section class="pa-3">
       <headline :headline="headline" />
       <v-row no-gutters>
         <post v-for="(post, index) in posts" :key="index" :post="post" />
@@ -42,11 +42,8 @@ export default {
     },
     isPc() {
       if (window.innerWidth >= 800) {
-        console.log(window.innerWidth)
         return true
-      } else {
-        return false
-      }
+      } else { return false }
     }
   },
   head: {
@@ -68,9 +65,5 @@ export default {
     margin: 0;
     padding: 0;
   }
-}
-
-section.latest-posts {
-  padding: 8px;
 }
 </style>

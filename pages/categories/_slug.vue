@@ -1,8 +1,8 @@
 <template>
-  <div class="latest-posts">
+  <div>
     <breadcrumbs :items="breadcrumbs" />
     <headline :headline="catHeadline" />
-    <v-row>
+    <v-row no-gutters>
       <post v-for="(post, index) in relatedPosts" :key="index" :post="post" />
     </v-row>
   </div>
@@ -49,9 +49,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.latest-posts {
-  padding: 16px;
-}
-</style>

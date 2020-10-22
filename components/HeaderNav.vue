@@ -120,7 +120,7 @@ export default {
     display: block;
     @media (max-width: (768px)) {
       display: none;
-      background-color: rgba(220, 220, 220, 0.98);
+      background-color: rgba(220, 220, 220, 0.90);
       z-index: 30;
       padding: 2rem 1rem;
       width: 100%;
@@ -135,6 +135,7 @@ export default {
       @media (max-width: (768px)) {
         flex-direction: column;
         overflow-y: scroll;
+        padding-top: 40px;
         z-index: -1;
       }
       li {
@@ -157,6 +158,7 @@ export default {
           outline: none;
         }
         @media (max-width: (768px)) {
+          background-color: rgba(220, 220, 220, 1);
           padding-top: 16px;
           margin: 16px;
           text-align: center;

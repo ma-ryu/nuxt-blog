@@ -9,7 +9,6 @@
 export default {
   data() {
     return {
-      // eslint-disable-next-line no-undef
       copyright: `©️ ${new Date().getFullYear()} Ma-ryu All rights reserved.`
     }
   }

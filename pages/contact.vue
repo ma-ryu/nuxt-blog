@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="headline">
-      <h2>CONTACT</h2>
+      <h2 class="mt-12">CONTACT</h2>
     </div>
     <contact-form />
   </div>
@@ -17,11 +17,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.headline {
-  margin-top: 70px;
   h2 {
     color: rgb(160, 160, 160);
     text-shadow: 1px 1px 1px rgb(245, 245, 245);
   }
-}
 </style>

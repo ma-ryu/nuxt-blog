@@ -51,10 +51,5 @@ export default {
       ]
     }
   },
-  methods: {
-    imgLoaded() {
-      this,isLoading = false
-    },
-  }
 }
 </script>

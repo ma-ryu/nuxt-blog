@@ -1,5 +1,5 @@
 <template>
-  <section class="latest-posts">
+  <section>
     <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
     <v-row>
@@ -48,9 +48,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-* {
-  margin: 0;
-}
-</style>

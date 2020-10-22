@@ -2,7 +2,7 @@
   <div class="latest-posts">
     <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
-    <v-row>
+    <v-row no-gutters>
       <post v-for="(post, index) in relatedPosts" :key="index" :post="post" />
     </v-row>
   </div>
