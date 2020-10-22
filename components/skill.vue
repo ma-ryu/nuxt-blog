@@ -4,53 +4,15 @@
       <v-icon color="black" large class="mr-2">mdi-cube-outline</v-icon>
       <h3 class="text-h6">My Skills</h3>
     </div>
-    <v-treeview
-      class="text-left caption"
-      dense
-      hoverable
-      :items="items"
-    ></v-treeview>
+    <ul class="d-flex" style='list-style: none'>
+      <li class="pa-2"><v-icon large color="black">fab fa-html5</v-icon></li>
+      <li class="pa-2"><v-icon large color="black">fab fa-sass</v-icon></li>
+      <li class="pa-2"><v-icon large color="black">fab fa-vuejs</v-icon>
+      <li class="pa-2"><v-icon large color="black">fab fa-react</v-icon></li>
+    </ul>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      items: [
-        {
-          id: 1,
-          name: 'HTML'
-        },
-        {
-          id: 2,
-          name: 'CSS',
-          children: [
-            { id: 3, name: 'SCSS' },
-            { id: 4, name: 'BEM' },
-            { id: 5, name: 'Bootstrap' }
-          ]
-        },
-        {
-          id: 6,
-          name: 'JavaScript',
-          children: [
-            {
-              id: 7,
-              name: 'Vue.js',
-              children: [
-                { id: 8, name: 'Vuetify' },
-                { id: 9, name: 'Nuxt.js' }
-              ]
-            },
-            {
-              id: 10,
-              name: 'React.js',
-            },
-          ]
-        }
-      ]
-    }
-  }
-}
+export default {}
 </script>

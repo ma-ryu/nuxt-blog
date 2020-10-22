@@ -111,7 +111,8 @@ export default {
   },
   plugins: [
     '~/plugins/contentful',
-    '~/plugins/prism'
+    '~/plugins/prism',
+    { src: 'plugins/vuetify', ssr: false }
   ],
   generate: {
     routes() {
