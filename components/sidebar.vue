@@ -1,12 +1,12 @@
 <template>
   <div class="pa-3">
     <profile />
-    <nuxt-link class="link text-left" to="/contact">
-      <p class="mb-8">
+    <nuxt-link class="link" to="/contact">
+      <p>
         <v-icon class="mx-5">mdi-email</v-icon>CONTACT
       </p>
     </nuxt-link>
-    <nuxt-link class="link text-left" to="/search">
+    <nuxt-link class="link" to="/search">
       <p>
         <v-icon class="mx-5">mdi-magnify</v-icon>SITE SEARCH
       </p>
@@ -35,15 +35,16 @@ export default {
   text-decoration: none;
   color: black !important;
   p {
-    padding: 8px;
     margin: 0 auto;
-    margin-bottom: 24px;
+    padding: 8px;
+    margin-bottom: 16px;
     width: 230px;
     border-radius: 25px;
     font-weight: bold;
     box-shadow: -8px -8px 15px rgb(240, 255, 250),
       8px 8px 15px rgb(180, 180, 180);
     transition: all 0.2s ease-in-out;
+    text-align: left;
     cursor: pointer;
     font-weight: 600;
     text-shadow: 0.7px 0.7px 1px rgb(50, 255, 250);
