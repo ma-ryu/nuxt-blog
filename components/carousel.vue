@@ -9,7 +9,7 @@
     
   >
     <v-carousel-item v-for="(item, i) in items" :key="i">
-      <v-img :src="item.src" lazy-src="https://dummyimage.com/1000x500/ccc/999.png&text=Loading" height="100%">
+      <v-img :src="item.src" lazy-src="https://dummyimage.com/900x550/ccc/999.png&text=Loading" height="100%">
         <template v-slot:placeholder>
           <v-row justify="center" align-content="center" class="fill-height">
               <v-progress-circular

@@ -39,14 +39,14 @@
           v-if="post.sys.contentType.sys.id === 'about'"
           text
           :to="linkTo('about', post)"
-          class=""
+          class="mt-3"
           >READ MORE</v-btn
         >
         <v-btn
           v-else
           outlined
           :to="linkTo('posts', post)"
-          class="mt-3"
+          class="mt-3r"
           >READ MORE</v-btn
         >
       </v-card-text>
@@ -85,4 +85,3 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>

@@ -16,6 +16,9 @@ export default {
       'getContentful'
     ]
   },
+  server: {
+    host: '0.0.0.0'
+  },
   head: {
     title: 'Ma-ryu' || '',
     titleTemplate: '%s - Ma-ryu',

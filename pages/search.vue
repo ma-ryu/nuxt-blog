@@ -1,5 +1,5 @@
 <template>
-  <div class="page-wrapper">
+  <div class="pa-4">
     <div class="headline">
       <h2>SITE SEARCH</h2>
     </div>
@@ -12,7 +12,7 @@
 </template>
 <script>
 import client from '~/plugins/contentful'
-import SearchWindow from '~/components/searchWindow.vue' // 検索窓をインポート
+import SearchWindow from '~/components/searchWindow.vue'
 import Post from '~/components/post.vue'
 
 export default {
@@ -51,11 +51,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-wrapper {
-  padding: 16px;
   h2 {
     color: rgb(160, 160, 160);
     text-shadow: 1px 1px 1px rgb(245, 245, 245);
   }
-}
 </style>
