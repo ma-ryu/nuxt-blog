@@ -33,7 +33,7 @@
             </v-chip>
           </div>
         </div>
-        <h2 class="text-left text-h6">{{ post.fields.title }}</h2>
+        <h2 class="text-left text-h6 black--text">{{ post.fields.title }}</h2>
         <v-spacer />
         <v-btn
           v-if="post.sys.contentType.sys.id === 'about'"
