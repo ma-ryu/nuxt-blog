@@ -16,3 +16,13 @@
 <script>
 export default {}
 </script>
+
+<style lang="scss" scoped>
+ul {
+  li {
+    i {
+        filter: drop-shadow(.7px .7px 1px rgb(50, 255, 250));
+    }
+  }
+}
+</style>

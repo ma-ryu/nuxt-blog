@@ -33,11 +33,11 @@
             </v-chip>
           </div>
         </div>
-        <h2 class="text-left">{{ post.fields.title }}</h2>
+        <h2 class="text-left text-h6">{{ post.fields.title }}</h2>
         <v-spacer />
         <v-btn
           v-if="post.sys.contentType.sys.id === 'about'"
-          text
+          outlined
           :to="linkTo('about', post)"
           class="mt-3"
           >READ MORE</v-btn
@@ -46,7 +46,7 @@
           v-else
           outlined
           :to="linkTo('posts', post)"
-          class="mt-3r"
+          class="mt-3"
           >READ MORE</v-btn
         >
       </v-card-text>
@@ -84,4 +84,3 @@ export default {
   }
 }
 </script>
-
