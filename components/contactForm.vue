@@ -41,8 +41,8 @@ export default {}
       margin-bottom: 16px;
       padding: 1px;
       border-radius: 25px;
-      box-shadow: inset 6px 6px 5px rgb(180, 180, 180),
-        inset -6px -6px 10px rgb(245, 245, 245);
+      box-shadow: inset 5px 5px 10px rgb(180, 180, 180),
+          inset -5px -5px 10px rgb(240, 255, 250);
       width: 100%;
       box-sizing: border-box;
       transition: all 0.2s ease-in-out;
