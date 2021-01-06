@@ -23,12 +23,10 @@ export default {
   async asyncData({ payload, params, error, store }) {
     const tag =
       payload ||
-      (await store.state.tagList.find(
+      (await this.$store.state.tagList.find(
         (tag) => tag.fields.slug === params.slug
       ))
-
     if (tag) {
-      console.log(tag);
       return { tag }
     } else {
       return error({ statusCode: 400 })
