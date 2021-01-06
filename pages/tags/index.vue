@@ -64,7 +64,7 @@ export default {
     breadcrumbs() {
       return [{ text: 'ホーム', to: '/', icon: 'mdi-home' }]
     },
-    categoryColor() {
+    categoryColor(category) {
       return (category) => {
         switch (category.fields.name) {
           case 'programming':

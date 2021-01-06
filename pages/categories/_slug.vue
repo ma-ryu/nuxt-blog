@@ -1,7 +1,7 @@
 <template>
   <div>
     <breadcrumbs :items="breadcrumbs" />
-    <headline :headline="catHeadline" />
+    <headline :headline="{eng: this.category.fields.slug.toUpperCase()}" />
     <v-row no-gutters>
       <post v-for="(post, index) in relatedPosts" :key="index" :post="post" />
     </v-row>
@@ -20,9 +20,6 @@ export default {
     Breadcrumbs
   },
   computed: {
-    catHeadline() {
-      return { eng: this.category.fields.slug.toUpperCase() }
-    },
     relatedPosts() {
       return this.$store.getters.relatedPosts(this.category)
     },

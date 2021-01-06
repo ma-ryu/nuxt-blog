@@ -59,7 +59,7 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters(['linkTo']),
-    categoryColor() {
+    categoryColor(category) {
       return (category) => {
         switch (category.fields.name) {
           case 'programming':

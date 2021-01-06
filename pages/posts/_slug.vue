@@ -56,7 +56,7 @@ export default {
         { text: 'POSTS', to: '/posts' }
       ]
     },
-    categoryColor() {
+    categoryColor(category) {
       return (category) => {
         switch (category.fields.name) {
           case 'programming':

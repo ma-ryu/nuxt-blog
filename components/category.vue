@@ -38,7 +38,7 @@ export default {
     ...mapState(['categories']),
     ...mapState(['tagList']),
     ...mapGetters(['linkTo']),
-    categoryColor() {
+    categoryColor(category) {
       return (category) => {
         switch (category.fields.name) {
           case 'programming':
