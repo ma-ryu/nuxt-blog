@@ -1,4 +1,4 @@
-¥<template>
+<template>
   <div class="latest-posts">
     <breadcrumbs :items="breadcrumbs" />
     <headline :headline="{eng: this.tag.fields.name}" />
@@ -23,7 +23,7 @@ export default {
   async asyncData({ payload, params, error, store }) {
     const tag =
       payload ||
-      (await this.$store.state.tagList.find(
+      (await store.state.tagList.find(
         (tag) => tag.fields.slug === params.slug
       ))
     if (tag) {
