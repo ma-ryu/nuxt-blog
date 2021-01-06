@@ -1,7 +1,7 @@
 ¥<template>
   <div class="latest-posts">
     <breadcrumbs :items="breadcrumbs" />
-    <headline :headline="headline" />
+    <headline :headline="{eng: this.tag.fields.name}" />
     <v-row no-gutters>
       <post v-for="(post, index) in tagRelatedPosts" :key="index" :post="post" />
     </v-row>
@@ -28,15 +28,13 @@ export default {
       ))
 
     if (tag) {
+      console.log(tag);
       return { tag }
     } else {
       return error({ statusCode: 400 })
     }
   },
   computed: {
-    headline() {
-      return { eng: this.tag.fields.name }
-    },
     breadcrumbs() {
       return [
         { text: 'ホーム', to: '/', icon: 'mdi-home' },
