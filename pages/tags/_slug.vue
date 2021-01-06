@@ -3,7 +3,7 @@
     <breadcrumbs :items="breadcrumbs" />
     <headline :headline="headline" />
     <v-row no-gutters>
-      <post v-for="(post, index) in relatedPosts" :key="index" :post="post" />
+      <post v-for="(post, index) in tagRelatedPosts" :key="index" :post="post" />
     </v-row>
   </div>
 </template>
@@ -21,25 +21,16 @@ export default {
     Breadcrumbs
   },
   async asyncData({ payload, params, error, store }) {
-    let tag = payload
-    if (!tag) {
-      for (let i = 0; i < store.state.posts.length; i++) {
-        const tags = store.state.posts[i].fields.tag
-        if (tags) tag = tags.find((tag) => tag.fields.slug === params.slug)
-        if (tag) break
-      }
-    }
+    const tag =
+      payload ||
+      (await store.state.tagList.find(
+        (tag) => tag.fields.slug === params.slug
+      ))
+
     if (tag) {
-      const relatedPosts = await client
-        .getEntries({
-          content_type: 'post',
-          'fields.tag.sys.id': tag.sys.id
-        })
-        .then((res) => res.items)
-        .catch(console.error)
-      return { tag, relatedPosts }
+      return { tag }
     } else {
-      error({ statusCode: 400 })
+      return error({ statusCode: 400 })
     }
   },
   computed: {
@@ -51,7 +42,10 @@ export default {
         { text: 'ホーム', to: '/', icon: 'mdi-home' },
         { text: 'tags', to: '/categories' }
       ]
-    }
+    },
+    tagRelatedPosts() {
+      return this.$store.getters.tagRelatedPosts(this.tag)
+    },
   }
 }
 </script>

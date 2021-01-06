@@ -81,7 +81,7 @@ export default {
       span {
         width: 100%;
         height: 2px;
-        background: #000;
+        background:white;
         display: block;
         transition: 0.6s;
         position: absolute;
