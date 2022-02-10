@@ -25,7 +25,7 @@
     "@nuxtjs/vuetify": "^1.11.2",
     "contentful": "^7.14.4",
     "css-loader": "^3.6.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-webfontloader": "^1.1.0",
